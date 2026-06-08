@@ -138,6 +138,60 @@
       </div>
     </section>
 
+    <!-- CLIENT REVIEWS -->
+    <section class="reviews-section" id="client-reviews" aria-labelledby="reviews-title">
+      <div class="container reviews-container">
+        <div class="reviews-header">
+          <h2 class="reviews-title" id="reviews-title">What Our Clients Say</h2>
+          <p class="reviews-subtitle">Don't just take our word for it&mdash;see what our clients have to say.</p>
+        </div>
+
+        <div class="reviews-carousel" aria-roledescription="carousel" aria-label="Client reviews">
+          <button class="review-nav review-nav--prev" type="button" aria-label="Show previous review" data-review-prev>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+
+          <article class="review-card" aria-live="polite">
+            <div class="review-avatar avatar-blue" data-review-avatar>AK</div>
+            <h3 class="review-name" data-review-name>Arya Kannantha</h3>
+            <p class="review-date" data-review-date>11 months ago</p>
+            <div class="review-stars" aria-label="5 out of 5 stars" data-review-stars>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text" data-review-text>Perfect job cleaning our house super time friendly and affordable. Their crew was super nice and made everything very easy.</p>
+          </article>
+
+          <button class="review-nav review-nav--next" type="button" aria-label="Show next review" data-review-next>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div class="review-dots" aria-label="Review carousel position" data-review-dots></div>
+
+        <div class="ratings-bar" aria-label="DF Cleaning ratings summary">
+          <div class="rating-source">
+            <div class="rating-logo google-logo" aria-hidden="true">G</div>
+            <div>
+              <p class="rating-score">5.0 <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+              <p class="rating-label">Google Reviews</p>
+            </div>
+          </div>
+          <div class="rating-divider" aria-hidden="true"></div>
+          <div class="rating-source">
+            <div class="rating-logo facebook-logo" aria-hidden="true">f</div>
+            <div>
+              <p class="rating-score">5.0 <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+              <p class="rating-label">Facebook Reviews</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- OVERVIEW / WHY CHOOSE US -->
     <section class="section-padding" id="why-choose-us" style="background-color: var(--color-white);">
       <div class="container">
@@ -224,6 +278,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=reviews-carousel"></script>
 </body>
 </html>
