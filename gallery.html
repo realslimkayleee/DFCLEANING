@@ -6,243 +6,168 @@
   <title>Gallery | DF Cleaning</title>
   <meta name="description" content="View our portfolio of professional cleaning work including residential rooms, commercial spaces, and detailed before/after transformations.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Gallery page-specific styles */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-block-end: 4rem;
-    }
+  
 
-    .gallery-item {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--color-border);
-      background-color: var(--color-white);
-      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .gallery-image-box {
-      background-color: var(--color-blue-light);
-      aspect-ratio: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2.5rem;
-      color: var(--color-blue);
-      border-block-end: 1px solid var(--color-border);
-    }
-
-    .gallery-image-box svg {
-      opacity: 0.6;
-      margin-block-end: 1rem;
-    }
-
-    .gallery-info {
-      padding: 1.5rem;
-    }
-
-    .gallery-info h3 {
-      font-size: 1.1rem;
-      margin-block-end: 0.25rem;
-    }
-
-    .gallery-info p {
-      font-size: 0.85rem;
-      color: var(--color-gray-dark);
-    }
-
-    .gallery-filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-block-end: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-      background-color: var(--color-white);
-      color: var(--color-navy);
-      border: 1px solid var(--color-border);
-      transition: all var(--transition-speed);
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background-color: var(--color-blue);
-      color: var(--color-white);
-      border-color: var(--color-blue);
-    }
-  </style>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/header.js" defer></script>
 </head>
 <body>
 
-  <!-- HEADER / NAVIGATION -->
-  <header>
-    <div class="container nav-wrapper">
-      <a href="index.html" class="logo-link" id="logo-home-link" aria-label="DF Cleaning Homepage">
-        <img src="assets/logo2.png" alt="DF Cleaning Logo">
-      </a>
+  <site-header root-path=""></site-header>
 
-      <nav class="main-nav" id="main-navigation" aria-label="Primary Navigation">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a href="services.html" class="nav-link">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a href="gallery.html" class="nav-link" aria-current="page">GALLERY</a>
-          </li>
-          <li class="nav-item">
-            <a href="estimate.html" class="nav-link">CONTACT</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a href="tel:+18005550199" class="btn btn-outline" id="header-call-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-          </svg>
-          Call Us
-        </a>
-        <a href="estimate.html" class="btn btn-primary" id="header-estimate-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          Get Estimate
-        </a>
+    <main id="smooth-wrapper">
+    <!-- NEW HERO SECTION -->
+    <section class="gallery-hero reveal-up">
+      <img src="assets/gallery-hero-bg.jpg" alt="" class="gallery-hero-bg" aria-hidden="true" loading="lazy">
+      <div class="gallery-hero-content">
+        <h1 class="gallery-hero-title">Our Work, Up Close</h1>
+        <p class="gallery-hero-subtitle">See the difference professional cleaning makes across residential and commercial spaces.</p>
       </div>
-
-      <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-      <div class="container">
-        <h1 class="page-title">Work Gallery</h1>
-        <nav class="page-breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span class="breadcrumbs-separator">/</span>
-          <span class="breadcrumbs-active">Gallery</span>
-        </nav>
+      <div class="scroll-down-cue" aria-hidden="true">
+        <span style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">Scroll</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
       </div>
     </section>
 
-    <!-- GALLERY PORTFOLIO -->
+    <!-- FILTER BAR -->
     <section class="container section-padding">
-      <div class="gallery-filter-bar">
-        <button class="filter-btn active">All Projects</button>
-        <button class="filter-btn">Residential</button>
-        <button class="filter-btn">Commercial</button>
-        <button class="filter-btn">Deep Clean</button>
+      <!-- GALLERY GRID -->
+      <div class="gallery-grid" id="gallery-grid">
+
+        <div class="gallery-item span-large reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/Window Washing/21e6fb770aafd2d9e888f515b2a24cae8dda0ec2d137e508cc31596194fd5ef1.jpg" alt="DF Cleaning work sample 1" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/Window Washing/221961d015083315ec8f96902895157d1040305efe20dead37c627637cc885e6.jpg" alt="DF Cleaning work sample 2" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/27a2e55dd41fba5b5b2e014f9b753bbdd3d0212b31e9ffff38e20bf063bb617b.jpg" alt="DF Cleaning work sample 3" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/Home Cleaning/2b9affca3a9d2c36972de1e708188f78d504184f03efcea2b7ef913e8dbc0e71.jpg" alt="DF Cleaning work sample 4" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/MoveInMoveOutCleaning/388b3c441a7afdf1e85e25bc045b68f88764b65a2b4fe9fe8e9d9080b9d277cd.jpg" alt="DF Cleaning work sample 5" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item span-tall reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/453606c4795718e2be3da18bf4013703cd797d2d07b406cf6f4c7553288625ec.jpg" alt="DF Cleaning work sample 6" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/65cdaf8e9d1711d049cd16f50d095390d63962901bb3bd7c2aa683a0fe476427.jpg" alt="DF Cleaning work sample 7" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item span-large reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/MoveInMoveOutCleaning/7e4ce0242a817ec732492f0b7e2870b6c77ea1eb98f21d7a9e8e3e44c2d2408e.jpg" alt="DF Cleaning work sample 8" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/Coaching/8501ed4bd322d742189aff2cce57d78b14b331a2ff4434115434baafc7550ac7.jpg" alt="DF Cleaning work sample 9" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/88aac0ae0be8bd170d049c9a8bbba3e1669e160377bf3924b3b5e73ca50d8051.jpg" alt="DF Cleaning work sample 10" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item span-tall reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/94252a9201bd5d73c3273e5f3162d3f13efdd7dc859717fba81e862470ad3d14.jpg" alt="DF Cleaning work sample 11" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/9bfd0b62a01518e703b9c2721d2629c6eb53b552f9722e92e866f265c54206f6.jpg" alt="DF Cleaning work sample 12" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/CommercialIndustrial Cleaning/ae5148b921cd8cc3ce2dac14a774b9a5626976ecb2f4d2f86b3d2b6bfa0eb34d.jpg" alt="DF Cleaning work sample 13" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/bbc8b627ec6bb517b8dcd2bbbe41a8447b441469a3c3b9eb8e10e337ddb188bd.jpg" alt="DF Cleaning work sample 14" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item span-large reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/CommercialIndustrial Cleaning/dcf375b581d70ff13f0ef1e3238e24363458698d1758425454fa982d77b76cb7.jpg" alt="DF Cleaning work sample 15" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item span-tall reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/On Going Cleaning/dfe423124abc599eea1f3aecdefbb91960f4114fab51c93d42c75291b7b4f59e.jpg" alt="DF Cleaning work sample 16" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/On Going Cleaning/ed215adde718238bbd6d3bb8a42e14c891c0821696cef8f0910a571ef9714687.jpg" alt="DF Cleaning work sample 17" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/Coaching/f042ebc02f03cd37ba69b15d968e44dfc74dbbfd27a5f76ab409fc2ae6ca4849.jpg" alt="DF Cleaning work sample 18" loading="lazy">
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
+          <div class="gallery-img-container">
+            <img class="gallery-img" src="assets/services/fe82ceccd0cc5d4d44f67cb7e1557537390e87a79a20874ded9105fa9d2a2948 (1).jpg" alt="DF Cleaning work sample 19" loading="lazy">
+          </div>
+        </div>
+      </div>
+      
+      <!-- CLOSING CTA -->
+      <div class="cta-band reveal-up" style="background-color: var(--color-blue-light); padding: 4rem 2rem; border-radius: 16px; text-align: center; margin-block-end: 2rem;">
+        <h2 style="font-size: 2rem; color: var(--color-navy-dark); margin-bottom: 1rem; font-weight: 800;">Ready for a spotless space?</h2>
+        <p style="margin-bottom: 2rem; color: var(--color-text-main);">Contact us today for a free estimate or call us directly.</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="estimate.html" class="btn btn-primary">Get a Quote</a>
+          <a href="tel:7373679177" class="btn btn-outline">(737) 367-9177</a>
+        </div>
       </div>
 
-      <div class="gallery-grid">
-        <!-- Item 1 -->
-        <div class="gallery-item">
-          <div class="gallery-image-box">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <p><strong>[Project Image 1]</strong><br>Kaylee: Add image of clean bedroom.</p>
-          </div>
-          <div class="gallery-info">
-            <h3>Modern Bedroom Clean</h3>
-            <p>Residential Cleaning</p>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="gallery-item">
-          <div class="gallery-image-box">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <p><strong>[Project Image 2]</strong><br>Kaylee: Add image of clean kitchen.</p>
-          </div>
-          <div class="gallery-info">
-            <h3>Luxury Kitchen Detail</h3>
-            <p>Deep Cleaning</p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="gallery-item">
-          <div class="gallery-image-box">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <p><strong>[Project Image 3]</strong><br>Kaylee: Add image of office lobby.</p>
-          </div>
-          <div class="gallery-info">
-            <h3>Corporate Office Lobby</h3>
-            <p>Commercial Cleaning</p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="gallery-item">
-          <div class="gallery-image-box">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <p><strong>[Project Image 4]</strong><br>Kaylee: Add image of spotless windows.</p>
-          </div>
-          <div class="gallery-info">
-            <h3>High-Rise Window Clean</h3>
-            <p>Window Cleaning</p>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="gallery-item">
-          <div class="gallery-image-box">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <p><strong>[Project Image 5]</strong><br>Kaylee: Add image of clean bathroom.</p>
-          </div>
-          <div class="gallery-info">
-            <h3>Master Bathroom Sanitation</h3>
-            <p>Residential Cleaning</p>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="gallery-item">
-          <div class="gallery-image-box">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            <p><strong>[Project Image 6]</strong><br>Kaylee: Add image of clean office breakroom.</p>
-          </div>
-          <div class="gallery-info">
-            <h3>Business Breakroom Polish</h3>
-            <p>Commercial Cleaning</p>
-          </div>
-        </div>
-      </div>
     </section>
   </main>
+
+  <!-- LIGHTBOX DIALOG -->
+  <dialog id="gallery-lightbox" class="lightbox-dialog" aria-modal="true" aria-label="Image Lightbox">
+    <div class="lightbox-container">
+      <div class="lightbox-header">
+        <div class="lightbox-info">
+          <h3 id="lightbox-title">Title</h3>
+          
+        </div>
+        <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="lightbox-content" id="lightbox-content">
+        <!-- Image injected via JS -->
+      </div>
+      <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Previous Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Next Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </dialog>
+
 
   <!-- FOOTER -->
   <footer class="main-footer">
