@@ -374,5 +374,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  
+  // --- Sticky Quote Form (Centered Hero) ---
+  const stickyQuoteForm = document.getElementById('sticky-quote-form');
+
+  if (stickyQuoteForm) {
+    // Scroll listener to toggle visibility
+    const handleScroll = () => {
+      // Trigger after just a little scroll
+      if (window.scrollY > 50) {
+        stickyQuoteForm.classList.add('visible');
+      } else {
+        stickyQuoteForm.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 });
