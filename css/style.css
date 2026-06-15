@@ -237,7 +237,7 @@
   }
 
   .nav-link:hover {
-    color: var(--color-blue);
+    color: var(--color-teal);
   }
 
   .nav-link[aria-current="page"] {
@@ -253,7 +253,7 @@
     transform: translateX(-50%);
     width: 24px;
     height: 3px;
-    background-color: var(--color-yellow);
+    background-color: var(--color-teal);
     border-radius: 2px;
   }
 
@@ -3967,4 +3967,278 @@
 .about-hero-title {
   overflow-wrap: break-word;
   hyphens: auto;
+}
+
+/* COMPACT HERO FORM OVERRIDES */
+#sticky-quote-form {
+  padding: 1rem;
+  bottom: 1.5rem;
+  max-width: 900px;
+}
+#sticky-quote-form .sticky-quote-form-body {
+  padding: 0;
+}
+#sticky-quote-form h2 {
+  font-size: 1.25rem !important;
+  margin-bottom: 0 !important;
+}
+#sticky-quote-form p {
+  font-size: 0.9rem !important;
+  margin-block-start: 0.25rem !important;
+}
+#sticky-quote-form .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+#sticky-quote-form .form-group {
+  margin-bottom: 0.5rem;
+  flex: 1;
+}
+#sticky-quote-form label {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+#sticky-quote-form .form-control {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+#sticky-quote-form textarea.form-control {
+  height: 45px !important;
+  min-height: 45px !important;
+  padding-top: 0.5rem;
+}
+#sticky-quote-form .btn-primary {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+#sticky-quote-form > div > form > div:nth-child(4) { /* The service requirements group */
+  margin-bottom: 0.5rem;
+}
+#sticky-quote-form > div > form > div:nth-child(5) { /* The details group */
+  margin-bottom: 0.5rem;
+}
+#sticky-quote-form > div > form > div:nth-child(6) { /* The submit button container */
+  margin-block-start: 0.5rem !important;
+}
+
+/* GLOBAL PAGE BACKGROUND (About page style) */
+body.global-bg {
+  background: 
+    radial-gradient(circle at 16% 22%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.48) 30%, transparent 54%), 
+    linear-gradient(180deg, hsl(210, 100%, 98%) 0%, var(--color-ice) 48%, hsl(210, 100%, 96%) 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+body.global-bg::before {
+  content: "";
+  position: fixed;
+  inset-block-start: 8rem;
+  inset-inline-end: clamp(-4rem, -5vw, -1rem);
+  inline-size: clamp(10rem, 18vw, 16rem);
+  block-size: clamp(10rem, 18vw, 16rem);
+  background-image: radial-gradient(rgba(20, 184, 166, 0.22) 1.35px, transparent 1.35px);
+  background-size: 13px 13px;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.global-bg::after {
+  content: "";
+  position: fixed;
+  inset-block-end: 10rem;
+  inset-inline-start: clamp(-2rem, -3vw, 1rem);
+  inline-size: clamp(8rem, 12vw, 12rem);
+  block-size: clamp(8rem, 12vw, 12rem);
+  background-image: radial-gradient(rgba(20, 184, 166, 0.22) 1.3px, transparent 1.3px);
+  background-size: 12px 12px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Make existing containers transparent so the body shows through */
+body.global-bg .about-hero,
+body.global-bg .services-page-container {
+  background: transparent !important;
+}
+body.global-bg .about-hero::before,
+body.global-bg .about-hero::after,
+body.global-bg .services-page-container::before,
+body.global-bg .services-page-container::after,
+body.global-bg .bg-pattern-dots {
+  display: none !important;
+}
+
+/* For sections that previously had white backgrounds, make them mostly transparent so they don't block the gradient completely, but keep them readable */
+body.global-bg .about-story,
+body.global-bg .about-gallery {
+  background: transparent !important;
+}
+body.global-bg .global-form-section {
+  background: transparent !important;
+}
+
+/* =========================================
+   GLOBAL FORM COLOR OVERRIDES (BLUE)
+   ========================================= */
+
+/* Information boxes outline */
+.form-control {
+  border: 1px solid var(--color-teal) !important;
+}
+#sticky-quote-form .form-control {
+  border: 1px solid var(--color-blue) !important;
+}
+.form-control:focus {
+  border-width: 2px !important;
+  outline: none;
+}
+
+/* Entire form wrapper outline */
+.estimate-form-wrapper {
+  border: 2px solid var(--color-teal) !important;
+}
+#sticky-quote-form {
+  border: 2px solid var(--color-blue) !important;
+}
+
+/* Form Submit Request Button */
+.estimate-form-wrapper .btn-primary,
+#sticky-quote-form .btn-primary,
+form .btn-primary {
+  background-color: var(--color-teal) !important;
+  color: var(--color-white) !important;
+  box-shadow: 0 4px 14px hsla(180, 70%, 42%, 0.3) !important;
+}
+
+.estimate-form-wrapper .btn-primary:hover,
+#sticky-quote-form .btn-primary:hover,
+form .btn-primary:hover {
+  background-color: var(--color-teal-dark) !important;
+  box-shadow: 0 6px 20px hsla(180, 70%, 42%, 0.4) !important;
+}
+
+/* =========================================
+   FLOATING CALL BUTTON
+   ========================================= */
+.floating-call-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-teal);
+  color: var(--color-white) !important;
+  padding: 0.75rem 1.25rem 0.75rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px hsla(180, 70%, 42%, 0.4);
+  text-decoration: none !important;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+  overflow: hidden;
+}
+
+.floating-call-btn:hover {
+  transform: translateY(-5px);
+  background-color: var(--color-teal-dark);
+  box-shadow: 0 15px 35px hsla(180, 70%, 42%, 0.5);
+}
+
+.floating-call-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-call-text {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-left: 0.6rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .floating-call-btn {
+    padding: 1rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  .floating-call-text {
+    display: none;
+  }
+  .floating-call-icon {
+    margin-right: 0;
+  }
+}
+
+/* Cairn Agency Footer Link */
+.cairn-agency-link {
+  color: var(--color-yellow) !important;
+  text-decoration: none !important;
+  transition: text-decoration var(--transition-speed);
+}
+.cairn-agency-link:hover {
+  text-decoration: underline !important;
+}
+
+/* Header Get A Quote Button */
+#header-estimate-btn {
+  background-color: var(--color-teal) !important;
+  color: var(--color-white) !important;
+  box-shadow: 0 4px 14px hsla(180, 70%, 42%, 0.3) !important;
+}
+#header-estimate-btn:hover {
+  background-color: var(--color-teal-dark) !important;
+  box-shadow: 0 6px 20px hsla(180, 70%, 42%, 0.4) !important;
+}
+
+/* Service Pages 3-Card Layout */
+.service-details-section {
+  padding-block: 4rem;
+  background-color: var(--color-gray-light);
+}
+.service-details-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-detail-card {
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 86, 179, 0.09);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(12, 35, 64, 0.05);
+  padding: 2.5rem 2rem;
+  border-top: 4px solid var(--color-teal);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.service-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(12, 35, 64, 0.1);
+}
+
+.service-detail-card h3 {
+  font-size: 1.25rem;
+  color: var(--color-navy-dark);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.service-detail-card p {
+  color: var(--color-gray-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .service-details-cards {
+    grid-template-columns: 1fr;
+  }
 }

@@ -9,7 +9,7 @@
 
   <script src="../js/header.js" defer></script>
 </head>
-<body>
+<body class="global-bg">
 
   <site-header root-path="../"></site-header>
 
@@ -33,33 +33,37 @@
       </div>
     </section>
 
-    <section class="about-story" id="service-story" aria-labelledby="story-title">
-      <div class="container about-story-grid">
-        <div class="about-story-card">
-          <span class="about-kicker">Service Details</span>
-          <h2 id="story-title">Comprehensive Residential Cleaning Solutions</h2>
-          <h3>Our Commitment to a Spotless Home</h3>
-          <p>Our approach is built on a foundation of thoroughness and attention to detail. We follow a systematic cleaning process to ensure no corner is overlooked. From dusting high shelves and vacuuming under furniture to wiping down all surfaces and polishing fixtures, our team is committed to delivering a superior level of clean. We use high-quality products and proven techniques to ensure your home isn’t just tidy, but truly sanitized and healthy.</p>
-          <h3>Flexible Scheduling and Personalized Service</h3>
-          <p>We recognize that every home and every homeowner has unique needs and preferences. That’s why we don’t believe in a one-size-fits-all approach. We work closely with you to develop a customized cleaning plan that perfectly aligns with your lifestyle and budget. Whether you require weekly, bi-weekly, monthly, or a one-time deep cleaning service, we can create a schedule that works for you.</p>
-          <p>Flexibility is at the core of our service. Our goal is to provide a seamless and hassle-free experience from start to finish. Booking our services is simple, and we pride ourselves on our punctuality and reliability. You can trust our vetted, professional, and friendly staff to treat your home with the utmost respect and care, providing you with peace of mind and exceptional results every time.</p>
-          <h3>A Detailed Checklist for Every Room</h3>
-          <p>Our standard cleaning service ensures your kitchen becomes a sparkling and hygienic space for you and your family. We meticulously clean and sanitize all countertops, wipe down cabinet exteriors, clean the stovetop, and polish the exterior of your appliances. We also thoroughly scrub and disinfect the sink and faucet, and finish by vacuuming and mopping the floor to leave it spotless.</p>
-          <p>In the bathrooms, our focus is on complete sanitation and shine. We deep clean and disinfect the toilet, shower, and tub, ensuring all soap scum and grime are removed. Sinks, vanities, and faucets are scrubbed and polished, mirrors are left streak-free, and all chrome fixtures are shined. We complete the process by emptying wastebaskets and thoroughly cleaning the floor.</p>
-          <p>For your living areas and bedrooms, we create a fresh and dust-free environment. Our team dusts all accessible surfaces, including windowsills, baseboards, and furniture. We carefully vacuum all carpets, rugs, and upholstered furniture, and we mop all hard floors. We can also make beds and tidy up general clutter to restore a sense of order and tranquility to your personal spaces.</p>
+        <section class="service-details-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="about-kicker" style="color: var(--color-teal); font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Service Details</span>
+          <h2 style="font-size: clamp(2rem, 1.55rem + 1.9vw, 3.3rem); color: var(--color-navy-dark); font-weight: 900; margin-top: 0.5rem;">Comprehensive Residential Cleaning Solutions</h2>
         </div>
-
-        <aside class="about-story-note" aria-label="Booking note">
-          <p>"Ready for a spotless space? Let our team handle the details so you can enjoy the results."</p>
-          <a href="../estimate.html?service=residential" class="btn btn-primary" style="margin-top: 1.5rem; display: block; text-align: center;">Get a Quote</a>
-        </aside>
+        
+        <div class="service-details-cards">
+          <div class="service-detail-card">
+            <h3>Thorough & Detailed Approach</h3>
+            <p>We follow a systematic cleaning process to ensure no corner is overlooked. From dusting high shelves to polishing fixtures, our team is committed to delivering a truly sanitized and healthy home.</p>
+          </div>
+          <div class="service-detail-card">
+            <h3>Flexible & Personalized Service</h3>
+            <p>We work closely with you to develop a customized cleaning plan that perfectly aligns with your lifestyle and budget. Whether you require weekly, bi-weekly, or monthly cleaning, we create a schedule that works for you.</p>
+          </div>
+          <div class="service-detail-card">
+            <h3>Room-by-Room Spotless Results</h3>
+            <p>Our standard service ensures every room shines. We meticulously clean and sanitize kitchens, disinfect bathrooms, and create fresh, dust-free living areas where you can relax.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   
+  <site-contact-form root-path="../"></site-contact-form>
+
   <!-- FOOTER -->
-  <site-footer root-path=""></site-footer>
+  <site-footer root-path="../"></site-footer>
 
   <script src="../js/main.js"></script>
 </body>
 </html>
+

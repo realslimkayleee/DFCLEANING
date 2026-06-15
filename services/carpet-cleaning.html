@@ -9,7 +9,7 @@
 
   <script src="../js/header.js" defer></script>
 </head>
-<body>
+<body class="global-bg">
 
   <site-header root-path="../"></site-header>
 
@@ -33,33 +33,37 @@
       </div>
     </section>
 
-    <section class="about-story" id="service-story" aria-labelledby="story-title">
-      <div class="container about-story-grid">
-        <div class="about-story-card">
-          <span class="about-kicker">Service Details</span>
-          <h2 id="story-title">Restore Your Carpet’s Health and Vibrancy</h2>
-          <h3>Beyond the Surface: The Importance of a Deep Clean</h3>
-          <p>Our professional deep cleaning service goes far beyond what household vacuums can achieve. By removing these trapped pollutants, we not only restore the vibrant color and soft texture of your carpets but also create a healthier living environment for you and your family. Investing in regular professional cleaning is a crucial step in protecting your family’s health and extending the lifespan of your valuable carpets.</p>
-          <h3>The DF Cleaning LLC Advanced Cleaning Process</h3>
-          <p>We utilize the industry-preferred hot water extraction method, often referred to as steam cleaning, for the most thorough clean possible. This process involves injecting a high-pressure solution of hot water and a specialized cleaning agent deep into the carpet pile. This powerful action dislodges stubborn dirt, grime, and allergens from the very base of the fibers.</p>
-          <p>Immediately following the injection, our commercial-grade equipment powerfully extracts the water, cleaning solution, and all the loosened contaminants. This leaves your carpets deeply cleaned, sanitized, and nearly dry. We exclusively use eco-friendly and non-toxic cleaning agents that are tough on dirt but completely safe for your children and pets.</p>
-          <h3>Targeting Stains, Odors, and High-Traffic Areas</h3>
-          <p>From a spilled glass of red wine to tracked-in mud and unfortunate pet accidents, stains are a part of life. Our technicians are highly trained in stain-fighting chemistry. We don’t believe in a one-size-fits-all approach; instead, we carefully identify the type of stain and apply the most effective, specialized treatment to break it down and lift it from the carpet fibers without causing damage.</p>
-          <p>Lingering odors from pets, smoke, or mildew can permeate not just the carpet fibers but also the padding and subfloor. Our professional-grade deodorizing treatments do more than simply mask unpleasant smells. They attack and neutralize the odor-causing bacteria at their source, completely eliminating the problem and leaving your home smelling genuinely fresh and clean.</p>
-          <p>After your carpet is beautifully clean, consider safeguarding it against future mishaps. We offer an optional application of a high-quality carpet protectant. This invisible shield creates a barrier around each fiber, repelling liquids and preventing spills from setting in. This gives you more time to clean up messes and helps prevent permanent staining, preserving your carpet’s beauty for longer.</p>
+        <section class="service-details-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="about-kicker" style="color: var(--color-teal); font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Service Details</span>
+          <h2 style="font-size: clamp(2rem, 1.55rem + 1.9vw, 3.3rem); color: var(--color-navy-dark); font-weight: 900; margin-top: 0.5rem;">Deep Carpet Cleaning & Restoration</h2>
         </div>
-
-        <aside class="about-story-note" aria-label="Booking note">
-          <p>"Ready for a spotless space? Let our team handle the details so you can enjoy the results."</p>
-          <a href="../estimate.html?service=carpet" class="btn btn-primary" style="margin-top: 1.5rem; display: block; text-align: center;">Get a Quote</a>
-        </aside>
+        
+        <div class="service-details-cards">
+          <div class="service-detail-card">
+            <h3>Revitalize Your Floors</h3>
+            <p>Restore the vibrant color and soft texture of your carpets. Our deep cleaning extraction methods remove embedded dirt, allergens, and tough stains that regular vacuuming leaves behind.</p>
+          </div>
+          <div class="service-detail-card">
+            <h3>Odor & Stain Removal</h3>
+            <p>We tackle stubborn pet stains, food spills, and lingering odors. Our specialized treatments neutralize smells at the source, leaving your home smelling fresh and clean.</p>
+          </div>
+          <div class="service-detail-card">
+            <h3>Extend Carpet Lifespan</h3>
+            <p>Regular professional cleaning protects your investment. By removing abrasive dirt particles that wear down carpet fibers, we significantly extend the life and beauty of your flooring.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   
+  <site-contact-form root-path="../"></site-contact-form>
+
   <!-- FOOTER -->
-  <site-footer root-path=""></site-footer>
+  <site-footer root-path="../"></site-footer>
 
   <script src="../js/main.js"></script>
 </body>
 </html>
+

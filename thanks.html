@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | DF Cleaning</title>
+  <meta name="description" content="Thank you for contacting DF Cleaning. Your request has been successfully submitted.">
+  <meta http-equiv="refresh" content="8;url=index.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="global-bg" style="display: flex; flex-direction: column; min-height: 100vh; align-items: center; justify-content: center; padding: 2rem;">
+
+  <div class="estimate-form-wrapper text-center" style="padding: 4rem 2rem; max-width: 600px; width: 100%; border: 2px solid var(--color-teal); background-color: var(--color-white); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+    
+    <!-- Logo -->
+    <img src="assets/logo2.png" alt="DF Cleaning Logo" style="max-width: 180px; margin: 0 auto 2rem; display: block;">
+
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1.5rem;">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <h1 style="color: var(--color-navy-dark); font-family: var(--font-sans); font-size: 2.5rem; margin-bottom: 1rem;">Thank You!</h1>
+    <p style="color: var(--color-text-main); font-size: 1.15rem; margin-bottom: 2rem;">Your request has been successfully submitted.<br>A member of our team will be in touch shortly.</p>
+    <div style="width: 40px; height: 4px; background-color: var(--color-yellow); margin: 0 auto 2rem; border-radius: 2px;"></div>
+    
+    <p style="color: var(--color-gray-dark); font-size: 0.95rem;">You will be redirected back to the home page in <span id="countdown" style="font-weight: bold; color: var(--color-teal);">8</span> seconds.</p>
+  </div>
+
+  <script>
+    let timeLeft = 8;
+    const countdownElement = document.getElementById('countdown');
+    
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownElement.textContent = timeLeft;
+      
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        // Fallback JavaScript redirect if meta refresh doesn't trigger
+        window.location.href = 'index.html'; 
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
+

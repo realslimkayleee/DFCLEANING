@@ -392,3 +392,147 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 });
+
+
+class SiteContactForm extends HTMLElement {
+  connectedCallback() {
+    const rootPath = this.getAttribute("root-path") || "";
+    const isHero = this.hasAttribute("hero");
+    const isInline = this.hasAttribute("inline");
+    
+    const formHtml = `<div style="text-align: center; margin-block-end: 0.5rem;">
+          <h2 style="font-family: var(--font-sans); color: var(--color-navy-dark); font-size: 1.75rem; margin-top: 0;">Get a Free Quote</h2>
+          <p style="color: var(--color-gray-dark); margin-block-start: 0.5rem;">Request your free cleaning quote today!</p>
+        </div>
+
+        <form action="https://formsubmit.co/alejandra.fajardo71@gmail.com" method="POST" id="cleaning-estimate-form">
+          <input type="hidden" name="_cc" value="darwinfajardo76@gmail.com">
+          <input type="hidden" name="_subject" value="New Estimate Request from DF Cleaning Website">
+          <!-- Name Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name" class="form-label">First Name *</label>
+              <input type="text" id="first-name" name="firstName" class="form-control" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="last-name" class="form-label">Last Name *</label>
+              <input type="text" id="last-name" name="lastName" class="form-control" required aria-required="true">
+            </div>
+          </div>
+
+          <!-- Contact Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 000-0000" required aria-required="true">
+            </div>
+          </div>
+
+          <!-- Service Requirements -->
+          <div class="form-group">
+            <label for="service-type" class="form-label">Service Desired *</label>
+            <select id="service-type" name="serviceType" class="form-control" required aria-required="true">
+              <option value="" disabled selected>Select a service...</option>
+              <option value="home">Home Cleaning</option>
+              <option value="ongoing">On-Going Cleaning</option>
+              <option value="commercial">Commercial / Industrial Cleaning</option>
+              <option value="move-in-out">Move-In / Move-Out Cleaning</option>
+              <option value="window">Window Washing</option>
+              <option value="carpet">Carpet Cleaning</option>
+              <option value="coaching">Coaching</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="details" class="form-label">Special Instructions or Details</label>
+            <textarea id="details" name="details" class="form-control" rows="4" placeholder="Tell us more about your space, specific areas of focus, or preferred dates..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div style="text-align: center; margin-block-start: 2rem;">
+            <button type="submit" class="btn btn-primary" style="inline-size: 100%; max-inline-size: 300px;">
+              Submit Request
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </form>`;
+    
+    if (isHero) {
+      this.innerHTML = formHtml;
+    } else if (isInline) {
+      this.innerHTML = `
+        <div class="estimate-form-wrapper" style="background-color: var(--color-white); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 2rem; border: 2px solid var(--color-teal);">
+          ${formHtml}
+        </div>
+      `;
+    } else {
+      this.innerHTML = `
+        <section class="global-cta-section" style="padding-block: 4rem; background-color: transparent;">
+          <div class="container">
+            <div class="cta-band reveal-up" style="background-color: var(--color-blue-light); padding: 3rem 1.5rem; border-radius: 16px; text-align: center; max-width: 800px; margin: 0 auto;">
+              <h2 style="font-size: 2rem; color: var(--color-navy-dark); margin-bottom: 1rem; font-weight: 800;">Ready for a spotless space?</h2>
+              
+              <div style="margin-bottom: 1rem; display: flex; justify-content: center;">
+                <a href="tel:+17373679177" class="btn" style="background-color: var(--color-teal); color: var(--color-white); border-radius: 50px; padding: 0.75rem 2rem; box-shadow: 0 4px 14px hsla(180, 70%, 42%, 0.3); text-decoration: none;">
+                  Call Now: (737) 367-9177
+                </a>
+              </div>
+              
+              <div style="margin-bottom: 1rem; font-weight: 800; color: var(--color-teal); font-size: 1.1rem;">OR</div>
+              <p style="margin-bottom: 1.5rem; color: var(--color-text-main);">Fill out the form below to get your free quote.</p>
+              
+              <div style="text-align: left; background-color: var(--color-white); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 2rem; border: 2px solid var(--color-teal);">
+                ${formHtml}
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    // Add dynamic _next redirect for FormSubmit
+    const form = this.querySelector('form');
+    if (form) {
+      const nextInput = document.createElement("input");
+      nextInput.type = "hidden";
+      nextInput.name = "_next";
+      
+      // Calculate absolute URL for thanks.html based on current location
+      let currentPath = window.location.pathname;
+      let pathBase = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      nextInput.value = window.location.origin + pathBase + "thanks.html";
+      
+      // We also add a captcha disabling field as a bonus, but let's stick to the user's request.
+      form.appendChild(nextInput);
+    }
+  }
+}
+customElements.define("site-contact-form", SiteContactForm);
+
+
+// FLOATING CALL BUTTON INJECTION
+document.addEventListener('DOMContentLoaded', () => {
+  if (!document.querySelector('.floating-call-btn')) {
+    const callBtn = document.createElement('a');
+    callBtn.href = "tel:+17373679177";
+    callBtn.className = "floating-call-btn";
+    callBtn.setAttribute("aria-label", "Call DF Cleaning");
+    callBtn.innerHTML = `
+      <div class="floating-call-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"></path>
+        </svg>
+      </div>
+      <span class="floating-call-text">Call Now! (737) 367-9177</span>
+    `;
+    document.body.appendChild(callBtn);
+  }
+});

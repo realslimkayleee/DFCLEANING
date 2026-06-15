@@ -28,55 +28,15 @@
         </div>
         
         <!-- HERO QUOTE FORM (Centered) -->
-        <aside class="sticky-quote-form" id="sticky-quote-form">
-          <div class="sticky-quote-form-header">
-            <h3>Get a Free Quote</h3>
-            <p>Request your free cleaning quote today!</p>
-          </div>
-          <div class="sticky-quote-form-body">
-            <form action="#" method="POST" id="cleaning-estimate-form-sticky">
-              
-              <div class="form-row form-row-hero">
-                <div class="form-group">
-                  <input type="text" id="sticky-first-name" name="firstName" class="form-control" placeholder="First Name *" required aria-required="true">
-                </div>
-                <div class="form-group">
-                  <input type="text" id="sticky-last-name" name="lastName" class="form-control" placeholder="Last Name *" required aria-required="true">
-                </div>
-                <div class="form-group">
-                  <input type="email" id="sticky-email" name="email" class="form-control" placeholder="Email Address *" required aria-required="true">
-                </div>
-                <div class="form-group">
-                  <input type="tel" id="sticky-phone" name="phone" class="form-control" placeholder="Phone *" required aria-required="true">
-                </div>
-              </div>
+        
 
-              <div class="form-row form-row-hero">
-                <div class="form-group">
-                  <select id="sticky-service-type" name="serviceType" class="form-control" required aria-required="true">
-                    <option value="" disabled selected>Select a service...</option>
-                    <option value="home">Home Cleaning</option>
-                    <option value="ongoing">On-Going Cleaning</option>
-                    <option value="commercial">Commercial / Industrial</option>
-                    <option value="move-in-out">Move-In / Move-Out</option>
-                    <option value="window">Window Washing</option>
-                    <option value="carpet">Carpet Cleaning</option>
-                    <option value="coaching">Coaching</option>
-                  </select>
-                </div>
-                <div class="form-group" style="grid-column: span 2;">
-                  <input type="text" id="sticky-details" name="details" class="form-control" placeholder="Special Instructions or Details...">
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary" style="width: 100%; height: 100%;">
-                    Get Quote
-                  </button>
-                </div>
-              </div>
-            </form>
+
+        <!-- HERO QUOTE FORM (Centered) -->
+        <aside class="sticky-quote-form" id="sticky-quote-form">
+          <div class="sticky-quote-form-body">
+            <site-contact-form root-path="" hero></site-contact-form>
           </div>
         </aside>
-
       </div>
     </section>
 
@@ -291,60 +251,11 @@
               </svg>
             </div>
             <h2 class="estimate-title" id="estimate-title">Let's Make Your Space Spotless</h2>
-            <p class="estimate-subtitle">Fill out the form below and a member of our team will be in touch shortly.</p>
-            <ul class="estimate-service-list" aria-label="Available cleaning services">
-              <li><span aria-hidden="true">&check;</span> Residential Cleaning</li>
-              <li><span aria-hidden="true">&check;</span> Commercial Cleaning</li>
-              <li><span aria-hidden="true">&check;</span> Move-In / Move-Out Cleaning</li>
-              <li><span aria-hidden="true">&check;</span> Recurring Services</li>
-            </ul>
+            <p class="estimate-subtitle">Fill out the form and a member of our team will be in touch shortly.</p>
+
           </div>
 
-          <form action="#" method="POST" class="homepage-estimate-form" id="homepage-estimate-form">
-            <div class="estimate-form-row estimate-form-row--split">
-              <div class="estimate-field">
-                <label for="home-first-name">First Name</label>
-                <input type="text" id="home-first-name" name="firstName" autocomplete="given-name" required>
-              </div>
-              <div class="estimate-field">
-                <label for="home-last-name">Last Name</label>
-                <input type="text" id="home-last-name" name="lastName" autocomplete="family-name" required>
-              </div>
-            </div>
-
-            <div class="estimate-form-row estimate-form-row--split">
-              <div class="estimate-field">
-                <label for="home-phone">Phone Number</label>
-                <input type="tel" id="home-phone" name="phone" autocomplete="tel" required>
-              </div>
-              <div class="estimate-field">
-                <label for="home-email">Email</label>
-                <input type="email" id="home-email" name="email" autocomplete="email" required>
-              </div>
-            </div>
-
-            <div class="estimate-toggle-row">
-              <label class="estimate-toggle" for="home-address-toggle">
-                <input type="checkbox" id="home-address-toggle" name="provideAddress" aria-controls="home-address-field">
-                <span class="estimate-toggle-track" aria-hidden="true"></span>
-                <span>Address Toggle</span>
-              </label>
-            </div>
-
-            <div class="estimate-field estimate-address-field" id="home-address-field" hidden>
-              <label for="home-address">Address</label>
-              <input type="text" id="home-address" name="address" autocomplete="street-address" disabled>
-            </div>
-
-            <div class="estimate-field">
-              <label for="home-message">Message</label>
-              <textarea id="home-message" name="message" rows="4" required></textarea>
-            </div>
-
-            <button type="submit" class="estimate-submit">
-              Send Message <span aria-hidden="true">&rarr;</span>
-            </button>
-          </form>
+          <site-contact-form root-path="" inline></site-contact-form>
         </div>
       </div>
     </section>

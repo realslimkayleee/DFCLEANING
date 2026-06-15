@@ -9,7 +9,7 @@
 
   <script src="../js/header.js" defer></script>
 </head>
-<body>
+<body class="global-bg">
 
   <site-header root-path="../"></site-header>
 
@@ -33,33 +33,37 @@
       </div>
     </section>
 
-    <section class="about-story" id="service-story" aria-labelledby="story-title">
-      <div class="container about-story-grid">
-        <div class="about-story-card">
-          <span class="about-kicker">Service Details</span>
-          <h2 id="story-title">Elevate Your Business with Professional Cleaning</h2>
-          <h3>The Foundation of a Productive and Safe Workspace</h3>
-          <p>The appearance of your facility is a direct reflection of your brand’s standards. For clients, partners, and visitors, a clean and organized space conveys professionalism, attention to detail, and a commitment to quality. This positive first impression can build trust and reinforce your reputation as a leader in your industry, setting you apart from the competition.</p>
-          <h3>Beyond Standard Janitorial: Tackling Tough Jobs</h3>
-          <p>Industrial facilities present cleaning challenges that go far beyond standard janitorial services. Heavy machinery, high-traffic production floors, accumulated dust, and industrial grime require specialized knowledge, powerful equipment, and robust cleaning agents. Our team is trained to handle the unique demands of these environments, ensuring every corner of your plant or warehouse is thoroughly sanitized.</p>
-          <p>Maintaining a clean industrial site is crucial for safety and regulatory compliance. Proper cleaning helps prevent slips, trips, and falls caused by spills or debris. We help you adhere to strict health and safety standards, including OSHA guidelines, by mitigating workplace hazards and creating a systematically safer environment for all your employees.</p>
-          <h3>Customized Cleaning Plans for Every Facility</h3>
-          <p>Our process begins with a comprehensive on-site consultation and a detailed assessment of your facility. We take the time to understand your specific business operations, identify high-traffic zones, and note any unique requirements. This allows us to grasp the full scope of your cleaning needs, whether you manage a corporate office, a retail space, or a medical facility.</p>
-          <p>Based on our assessment, we develop a fully customized cleaning plan and checklist tailored to your exact specifications. This detailed schedule outlines daily, weekly, and monthly tasks, from disinfecting common areas and sanitizing restrooms to specialized floor care and high-dusting services. This systematic approach ensures consistent, reliable results every time.</p>
-          <p>We utilize state-of-the-art equipment and high-quality, industry-approved cleaning solutions to deliver a superior clean. Our commitment is to use effective products that are safe for your employees, clients, and the environment. Our advanced techniques ensure deep sanitation, improved air quality, and a spotless finish that protects your assets.</p>
+        <section class="service-details-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="about-kicker" style="color: var(--color-teal); font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Service Details</span>
+          <h2 style="font-size: clamp(2rem, 1.55rem + 1.9vw, 3.3rem); color: var(--color-navy-dark); font-weight: 900; margin-top: 0.5rem;">Professional Commercial Cleaning Services</h2>
         </div>
-
-        <aside class="about-story-note" aria-label="Booking note">
-          <p>"Ready for a spotless space? Let our team handle the details so you can enjoy the results."</p>
-          <a href="../estimate.html?service=commercial" class="btn btn-primary" style="margin-top: 1.5rem; display: block; text-align: center;">Get a Quote</a>
-        </aside>
+        
+        <div class="service-details-cards">
+          <div class="service-detail-card">
+            <h3>Enhance Your Workplace</h3>
+            <p>A clean facility boosts employee morale, improves health, and creates a positive impression on clients. We ensure your business environment is hygienic and professional every single day.</p>
+          </div>
+          <div class="service-detail-card">
+            <h3>Tailored to Your Facility</h3>
+            <p>We service offices, retail stores, warehouses, and medical facilities. Our cleaning plans are customized to your specific industry requirements and operating hours to ensure minimal disruption.</p>
+          </div>
+          <div class="service-detail-card">
+            <h3>Comprehensive Maintenance</h3>
+            <p>From daily janitorial services and trash removal to deep floor cleaning and restroom sanitation, we provide a complete suite of services to keep your operations running smoothly.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   
+  <site-contact-form root-path="../"></site-contact-form>
+
   <!-- FOOTER -->
-  <site-footer root-path=""></site-footer>
+  <site-footer root-path="../"></site-footer>
 
   <script src="../js/main.js"></script>
 </body>
 </html>
+

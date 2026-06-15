@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/header.js" defer></script>
 </head>
-<body>
+<body class="global-bg">
 
   <site-header root-path=""></site-header>
 
@@ -21,77 +21,18 @@
         <div class="services-header-v2">
           <span class="services-eyebrow">Contact Us</span>
           <h1 class="services-headline">Request Estimate<span class="text-blue">.</span></h1>
-          <p class="services-subheading">We'd love to hear from you. Fill out the form below to get your free quote.</p>
+          <p class="services-subheading" style="margin-bottom: 1rem; font-weight: 800;">We'd love to hear from you.</p>
+          <div style="margin-bottom: 1rem;">
+            <a href="tel:+17373679177" class="btn" style="background-color: var(--color-teal); color: var(--color-white); border-radius: 50px; padding: 0.75rem 2rem; box-shadow: 0 4px 14px hsla(180, 70%, 42%, 0.3);">
+              Call Now: (737) 367-9177
+            </a>
+          </div>
+          <div style="margin-bottom: 1rem; font-weight: 800; color: var(--color-teal); font-size: 1.1rem;">OR</div>
+          <p class="services-subheading" style="margin-top: 0;">Fill out the form below to get your free quote.</p>
         </div>
 
         <!-- ESTIMATE FORM SECTION -->
-        <div id="estimate-form-section">
-      <div class="form-wrapper">
-        <div style="text-align: center; margin-block-end: 0.5rem;">
-          <h2 style="font-family: var(--font-sans); color: var(--color-navy-dark); font-size: 1.75rem; margin-top: 0;">Get a Free Quote</h2>
-          <p style="color: var(--color-gray-dark); margin-block-start: 0.5rem;">Request your free cleaning quote today!</p>
-        </div>
-
-        <form action="#" method="POST" id="cleaning-estimate-form">
-          
-          <!-- Name Row -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="first-name" class="form-label">First Name *</label>
-              <input type="text" id="first-name" name="firstName" class="form-control" required aria-required="true">
-            </div>
-            <div class="form-group">
-              <label for="last-name" class="form-label">Last Name *</label>
-              <input type="text" id="last-name" name="lastName" class="form-control" required aria-required="true">
-            </div>
-          </div>
-
-          <!-- Contact Row -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-control" required aria-required="true">
-            </div>
-            <div class="form-group">
-              <label for="phone" class="form-label">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 000-0000" required aria-required="true">
-            </div>
-          </div>
-
-          <!-- Service Requirements -->
-          <div class="form-group">
-            <label for="service-type" class="form-label">Service Desired *</label>
-            <select id="service-type" name="serviceType" class="form-control" required aria-required="true">
-              <option value="" disabled selected>Select a service...</option>
-              <option value="home">Home Cleaning</option>
-              <option value="ongoing">On-Going Cleaning</option>
-              <option value="commercial">Commercial / Industrial Cleaning</option>
-              <option value="move-in-out">Move-In / Move-Out Cleaning</option>
-              <option value="window">Window Washing</option>
-              <option value="carpet">Carpet Cleaning</option>
-              <option value="coaching">Coaching</option>
-            </select>
-          </div>
-
-          <!-- Message -->
-          <div class="form-group">
-            <label for="details" class="form-label">Special Instructions or Details</label>
-            <textarea id="details" name="details" class="form-control" rows="4" placeholder="Tell us more about your space, specific areas of focus, or preferred dates..."></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <div style="text-align: center; margin-block-start: 2rem;">
-            <button type="submit" class="btn btn-primary" style="inline-size: 100%; max-inline-size: 300px;">
-              Submit Request
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-          </div>
-        </form>
-      </div>
-        </div>
+        <site-contact-form root-path="" inline></site-contact-form>
       </div>
     </div>
   </main>

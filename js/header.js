@@ -169,7 +169,6 @@ class SiteFooter extends HTMLElement {
           <h3>Contact Information</h3>
           <ul>
             <li><span>Phone</span><a href="tel:+17373679177">(737) 367-9177</a></li>
-            <li><span>Email</span><a href="mailto:info@dfcleaning.com">info@dfcleaning.com</a></li>
             <li><span>Service Area</span><span>Texas</span></li>
           </ul>
         </div>
@@ -177,6 +176,7 @@ class SiteFooter extends HTMLElement {
 
       <div class="footer-bottom">
         <p>&copy; 2026 DF Cleaning. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9em; opacity: 0.8;">Website designed by <a href="https://cairnagency.io" class="cairn-agency-link" target="_blank" rel="noopener noreferrer">Cairn Agency</a></p>
       </div>
     </div>
   </footer>
