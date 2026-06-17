@@ -62,7 +62,7 @@ class SiteHeader extends HTMLElement {
             <li class="nav-item has-dropdown">
               <div class="nav-link-wrapper mobile-accordion-toggle" aria-expanded="false" style="position: relative; width: 100%; cursor: pointer;">
                 <a href="${rootPath}services.html" class="nav-link" ${isActive('services.html')}>SERVICES</a>
-                <span class="mobile-chevron" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); pointer-events: none;">
+                <span class="mobile-chevron" style="position: absolute; right: 0; top: 0; bottom: 0; width: 60px; display: flex; align-items: center; justify-content: center; z-index: 10;">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </span>
               </div>
