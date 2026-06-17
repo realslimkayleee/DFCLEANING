@@ -4110,9 +4110,14 @@
   }
 }
 
+* {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+}
+
 .about-hero-title {
-  overflow-wrap: break-word;
-  hyphens: auto;
+  overflow-wrap: normal;
+  hyphens: none !important;
 }
 
 /* COMPACT HERO FORM OVERRIDES */
