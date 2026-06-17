@@ -60,9 +60,9 @@ class SiteHeader extends HTMLElement {
               <a href="${rootPath}index.html" class="nav-link" ${isActive('index.html')}>HOME</a>
             </li>
             <li class="nav-item has-dropdown">
-              <div class="nav-link-wrapper mobile-accordion-toggle" aria-expanded="false" style="display: flex; align-items: center; justify-content: center; width: 100%; position: relative; cursor: pointer;">
-                <a href="${rootPath}services.html" class="nav-link" style="margin: 0; padding-right: 0; flex-grow: 0;" ${isActive('services.html')}>SERVICES</a>
-                <span class="mobile-chevron" style="position: absolute; right: 0; pointer-events: none;">
+              <div class="nav-link-wrapper mobile-accordion-toggle" aria-expanded="false" style="position: relative; width: 100%; cursor: pointer;">
+                <a href="${rootPath}services.html" class="nav-link" ${isActive('services.html')}>SERVICES</a>
+                <span class="mobile-chevron" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); pointer-events: none;">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </span>
               </div>
