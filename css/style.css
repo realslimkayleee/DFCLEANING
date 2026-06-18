@@ -4692,7 +4692,7 @@ form .btn-primary:hover {
   background-color: var(--color-ice);
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 

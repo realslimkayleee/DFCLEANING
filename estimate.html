@@ -71,86 +71,10 @@
               </svg>
             </div>
             <h2>Tell Us About Your Project</h2>
-            <p>Our estimates are completely customized based on your specific needs and space.</p>
+            <p style="margin-bottom: 2rem;">Our estimates are completely customized based on your specific needs and space.</p>
           </div>
           
-          <form id="estimate-form-v2" action="https://formsubmit.co/darwin@dfcleaning.com" method="POST">
-            <!-- FormSubmit Options -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New Estimate Request (DF Cleaning)">
-            
-            <div class="estimate-form-grid">
-              <!-- Name -->
-              <div class="estimate-form-group">
-                <label for="name" class="estimate-form-label">Full Name *</label>
-                <input type="text" id="name" name="name" class="estimate-input" placeholder="John Doe" required>
-              </div>
-              
-              <!-- Phone -->
-              <div class="estimate-form-group">
-                <label for="phone" class="estimate-form-label">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" class="estimate-input" placeholder="(123) 456-7890" required>
-              </div>
-              
-              <!-- Email -->
-              <div class="estimate-form-group full-width">
-                <label for="email" class="estimate-form-label">Email Address *</label>
-                <input type="email" id="email" name="email" class="estimate-input" placeholder="john@example.com" required>
-              </div>
-              
-              <!-- Service Type -->
-              <div class="estimate-form-group full-width">
-                <label for="service" class="estimate-form-label">Service Needed *</label>
-                <select id="service" name="service" class="estimate-input" required>
-                  <option value="" disabled selected>Select a service...</option>
-                  <option value="residential">Residential Cleaning</option>
-                  <option value="commercial">Commercial Cleaning</option>
-                  <option value="move-in-out">Move-In / Move-Out</option>
-                  <option value="deep-clean">Deep Cleaning</option>
-                  <option value="post-construction">Post-Construction</option>
-                  <option value="power-washing">Power Washing</option>
-                  <option value="window">Window Washing</option>
-                  <option value="carpet">Carpet Cleaning</option>
-                  <option value="coaching">Coaching</option>
-                  <option value="other">Other / Not Sure</option>
-                </select>
-              </div>
-              
-              <!-- Details -->
-              <div class="estimate-form-group full-width">
-                <label for="details" class="estimate-form-label">Project Details</label>
-                <textarea id="details" name="details" class="estimate-input" placeholder="Tell us about the size of your space, specific areas of focus, or any special instructions..."></textarea>
-              </div>
-            </div>
-            
-            <!-- CTA Actions -->
-            <div class="estimate-form-actions">
-              <a href="tel:+17373679177" class="btn-estimate-secondary">Call Us Instead</a>
-              <button type="submit" class="btn-estimate-primary">
-                Request Estimate
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
-            </div>
-          </form>
-
-          <script>
-            // Ensure FormSubmit redirects to the thanks page instead of default captcha success page
-            document.addEventListener("DOMContentLoaded", () => {
-              const form = document.getElementById("estimate-form-v2");
-              if (form) {
-                const nextInput = document.createElement("input");
-                nextInput.type = "hidden";
-                nextInput.name = "_next";
-                let currentPath = window.location.pathname;
-                let pathBase = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-                nextInput.value = window.location.origin + pathBase + "thanks.html";
-                form.appendChild(nextInput);
-              }
-            });
-          </script>
+          <site-contact-form root-path="" inline></site-contact-form>
         </div>
       </div>
     </div>
