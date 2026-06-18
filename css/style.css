@@ -4751,9 +4751,10 @@ form .btn-primary:hover {
 
 .estimate-headline-group p {
   font-size: 1.15rem;
-  color: var(--color-text-main);
+  color: var(--color-navy-dark);
   line-height: 1.6;
   max-width: 450px;
+  font-weight: 700;
 }
 
 .estimate-contact-cards {
@@ -4763,21 +4764,21 @@ form .btn-primary:hover {
 }
 
 .estimate-card {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 1.25rem;
   padding: 1.5rem;
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .estimate-card:hover {
   transform: translateY(-3px);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #ffffff;
 }
 
 .estimate-card-icon {
@@ -4805,10 +4806,10 @@ form .btn-primary:hover {
 }
 
 .estimate-card-content p, .estimate-card-content a {
-  font-size: 1rem;
-  color: var(--color-gray-dark);
+  font-size: 1.05rem;
+  color: var(--color-navy-dark);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
 }
 
