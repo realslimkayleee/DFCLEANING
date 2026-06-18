@@ -446,12 +446,13 @@ class SiteContactForm extends HTMLElement {
             <select id="service-type" name="serviceType" class="form-control" required aria-required="true">
               <option value="" disabled selected>Select a service...</option>
               <option value="home">Home Cleaning</option>
-              <option value="ongoing">On-Going Cleaning</option>
+              <option value="ongoing">Ongoing Cleaning</option>
               <option value="commercial">Commercial / Industrial Cleaning</option>
               <option value="move-in-out">Move-In / Move-Out Cleaning</option>
               <option value="window">Window Washing</option>
               <option value="carpet">Carpet Cleaning</option>
               <option value="coaching">Coaching</option>
+              <option value="home-remodeling">Home Remodeling</option>
             </select>
           </div>
 
