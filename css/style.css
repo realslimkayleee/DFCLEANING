@@ -4688,7 +4688,7 @@ form .btn-primary:hover {
 .estimate-page-wrapper {
   position: relative;
   min-height: 100vh;
-  padding: 8rem 2rem 4rem;
+  padding: 14rem 2rem 4rem;
   background-color: var(--color-ice);
   overflow: hidden;
   display: flex;
@@ -4978,7 +4978,7 @@ textarea.estimate-input {
   }
 
   .estimate-page-wrapper {
-    padding: 7rem 1.5rem 3rem;
+    padding: 10rem 1.5rem 3rem;
   }
   
   .estimate-form-card {
