@@ -206,7 +206,7 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#ig-theme-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <defs>
                 <linearGradient id="ig-theme-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#94a3b8" /> <!-- Grey -->
+                  <stop offset="0%" stop-color="#0f172a" /> <!-- Deep Dark Blue -->
                   <stop offset="100%" stop-color="#00b4d8" /> <!-- Turquoise Blue -->
                 </linearGradient>
               </defs>
@@ -219,32 +219,13 @@
             <a href="https://www.instagram.com/df.cleaning/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); color: var(--color-navy-dark); font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; text-decoration: none; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">@df.cleaning</a>
           </h2>
           <p class="instagram-subtitle" style="color: var(--color-text-main); font-size: 1.15rem; font-weight: 500; margin-bottom: 1.5rem;">Keep up with our team on Instagram!</p>
-          <a href="https://www.instagram.com/df.cleaning/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #94a3b8, #00b4d8); border: none; color: var(--color-white); display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 50px; font-weight: 700; padding: 0.75rem 2rem; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);">
+          <a href="https://www.instagram.com/df.cleaning/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #0f172a, #00b4d8); border: none; color: var(--color-white); display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 50px; font-weight: 700; padding: 0.75rem 2rem; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);">
             Follow Us on Instagram
           </a>
         </div>
 
-        <!-- Custom Interactive Carousel -->
-        <div class="custom-ig-carousel-wrapper">
-          <button class="custom-ig-nav custom-ig-prev" aria-label="Previous posts">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-          
-          <div class="custom-ig-carousel" id="custom-ig-carousel">
-            <!-- Loading placeholder -->
-            <div class="custom-ig-loading">Loading live Instagram feed...</div>
-          </div>
-          
-          <button class="custom-ig-nav custom-ig-next" aria-label="Next posts">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
-        </div>
-
-        <!-- Hidden SociableKit Widget for Data Extraction (Must not be display: none for lazy loading) -->
-        <div id="sk-hidden-wrapper" style="opacity: 0.001; pointer-events: none; position: absolute; z-index: -9999; top: 0; left: 0; width: 100%; height: 1px; overflow: hidden;">
-          <div class="sk-instagram-feed" data-embed-id="25690573"></div>
-          <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
-        </div>
+        <div class="sk-instagram-feed" data-embed-id="25690573"></div>
+        <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
       </div>
     </section>
 
