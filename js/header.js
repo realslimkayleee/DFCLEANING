@@ -68,11 +68,11 @@ class SiteHeader extends HTMLElement {
               </div>
               <ul class="dropdown-menu">
                 <li><a href="${rootPath}services/home-cleaning.html" class="dropdown-link">Home Cleaning</a></li>
-                <li><a href="${rootPath}services/on-going-cleaning.html" class="dropdown-link">Ongoing Cleaning</a></li>
                 <li><a href="${rootPath}services/commercial-cleaning.html" class="dropdown-link">Commercial / Industrial Cleaning</a></li>
                 <li><a href="${rootPath}services/move-in-move-out.html" class="dropdown-link">Move-In / Move-Out Cleaning</a></li>
                 <li><a href="${rootPath}services/window-washing.html" class="dropdown-link">Window Washing</a></li>
                 <li><a href="${rootPath}services/carpet-cleaning.html" class="dropdown-link">Carpet Cleaning</a></li>
+                <li><a href="${rootPath}services/on-going-cleaning.html" class="dropdown-link">Ongoing Cleaning</a></li>
                 <li><a href="${rootPath}services/home-remodeling.html" class="dropdown-link">Home Remodeling</a></li>
                 <li><a href="${rootPath}services/coaching.html" class="dropdown-link">Coaching</a></li>
               </ul>
