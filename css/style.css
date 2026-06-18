@@ -4685,7 +4685,7 @@ form .btn-primary:hover {
 /* =========================================
    ESTIMATE PAGE V2 (TWO-COLUMN LUXURY)
    ========================================= */
-.estimate-page-wrapper {
+.ep-page-wrapper {
   position: relative;
   min-height: 100vh;
   padding: 8.5rem 2rem 2rem;
@@ -4696,7 +4696,7 @@ form .btn-primary:hover {
   justify-content: center;
 }
 
-.estimate-bg-image {
+.ep-bg-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -4709,7 +4709,7 @@ form .btn-primary:hover {
 }
 
 /* Uniform frosted overlay to make text readable */
-.estimate-bg-overlay {
+.ep-bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -4721,7 +4721,7 @@ form .btn-primary:hover {
   z-index: 1;
 }
 
-.estimate-container {
+.ep-container {
   position: relative;
   z-index: 2;
   max-width: 1300px;
@@ -4733,14 +4733,14 @@ form .btn-primary:hover {
 }
 
 /* LEFT COLUMN: INFO PANEL */
-.estimate-info-panel {
+.ep-info-panel {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   min-width: 0;
 }
 
-.estimate-headline-group h1 {
+.ep-headline-group h1 {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 800;
@@ -4749,7 +4749,7 @@ form .btn-primary:hover {
   margin-bottom: 1rem;
 }
 
-.estimate-headline-group p {
+.ep-headline-group p {
   font-size: 1.15rem;
   color: var(--color-navy-dark);
   line-height: 1.6;
@@ -4757,13 +4757,13 @@ form .btn-primary:hover {
   font-weight: 700;
 }
 
-.estimate-contact-cards {
+.ep-contact-cards {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.estimate-card {
+.ep-card {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 1);
@@ -4776,12 +4776,12 @@ form .btn-primary:hover {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.estimate-card:hover {
+.ep-card:hover {
   transform: translateY(-3px);
   background-color: #ffffff;
 }
 
-.estimate-card-icon {
+.ep-card-icon {
   width: 48px;
   height: 48px;
   background-color: var(--color-blue-light);
@@ -4793,19 +4793,19 @@ form .btn-primary:hover {
   flex-shrink: 0;
 }
 
-.estimate-card-icon svg {
+.ep-card-icon svg {
   width: 24px;
   height: 24px;
 }
 
-.estimate-card-content h3 {
+.ep-card-content h3 {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-navy-dark);
   margin-bottom: 0.25rem;
 }
 
-.estimate-card-content p, .estimate-card-content a {
+.ep-card-content p, .ep-card-content a {
   font-size: 1.05rem;
   color: var(--color-navy-dark);
   text-decoration: none;
@@ -4813,12 +4813,12 @@ form .btn-primary:hover {
   margin: 0;
 }
 
-.estimate-card-content a:hover {
+.ep-card-content a:hover {
   color: var(--color-blue);
 }
 
 /* RIGHT COLUMN: FORM CARD */
-.estimate-form-card {
+.ep-form-card {
   background-color: var(--color-white);
   border-radius: 2rem;
   padding: 1.25rem 2rem;
@@ -4827,11 +4827,11 @@ form .btn-primary:hover {
   min-width: 0;
 }
 
-.estimate-form-header {
+.ep-form-header {
   margin-bottom: 1rem;
 }
 
-.estimate-form-header .icon-wrap {
+.ep-form-header .icon-wrap {
   width: 56px;
   height: 56px;
   background-color: var(--color-navy-dark);
@@ -4843,7 +4843,7 @@ form .btn-primary:hover {
   margin-bottom: 1.5rem;
 }
 
-.estimate-form-header h2 {
+.ep-form-header h2 {
   font-family: var(--font-sans);
   font-size: 2rem;
   font-weight: 800;
@@ -4851,14 +4851,14 @@ form .btn-primary:hover {
   margin-bottom: 0.5rem;
 }
 
-.estimate-form-header p {
+.ep-form-header p {
   font-size: 1.05rem;
   color: var(--color-text-main);
   line-height: 1.5;
   margin: 0;
 }
 
-.estimate-form-grid {
+.ep-form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
@@ -4915,14 +4915,14 @@ textarea.estimate-input {
 }
 
 /* FORM CTA ACTIONS */
-.estimate-form-actions {
+.ep-form-actions {
   display: flex;
   gap: 1rem;
   align-items: center;
   margin-top: 1rem;
 }
 
-.btn-estimate-secondary {
+.btn-ep-secondary {
   flex: 0 0 auto;
   padding: 1rem 1.5rem;
   background-color: transparent;
@@ -4938,12 +4938,12 @@ textarea.estimate-input {
   justify-content: center;
 }
 
-.btn-estimate-secondary:hover {
+.btn-ep-secondary:hover {
   background-color: var(--color-ice);
   border-color: var(--color-gray-dark);
 }
 
-.btn-estimate-primary {
+.btn-ep-primary {
   flex: 1;
   padding: 1rem 2rem;
   background-color: var(--color-blue);
@@ -4961,7 +4961,7 @@ textarea.estimate-input {
   box-shadow: 0 8px 20px rgba(0, 86, 178, 0.25);
 }
 
-.btn-estimate-primary:hover {
+.btn-ep-primary:hover {
   background-color: var(--color-navy-dark);
   transform: translateY(-2px);
   box-shadow: 0 12px 25px rgba(8, 29, 52, 0.3);
@@ -4969,33 +4969,33 @@ textarea.estimate-input {
 
 /* RESPONSIVE */
 @media (max-width: 850px) {
-  .estimate-container {
+  .ep-container {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
   
-  .estimate-bg-overlay {
+  .ep-bg-overlay {
     background-color: rgba(246, 251, 254, 0.85); /* Slightly more opaque on mobile for better readability */
   }
 
-  .estimate-page-wrapper {
+  .ep-page-wrapper {
     padding: 10rem 1.5rem 3rem;
   }
   
-  .estimate-form-card {
+  .ep-form-card {
     padding: 2rem;
     border-radius: 1.5rem;
   }
   
-  .estimate-form-grid {
+  .ep-form-grid {
     grid-template-columns: 1fr;
   }
   
-  .estimate-form-actions {
+  .ep-form-actions {
     flex-direction: column-reverse;
   }
   
-  .btn-estimate-secondary, .btn-estimate-primary {
+  .btn-ep-secondary, .btn-ep-primary {
     width: 100%;
   }
 }
