@@ -478,13 +478,13 @@ class SiteContactForm extends HTMLElement {
       this.innerHTML = formHtml;
     } else if (isEstimatePage) {
       this.innerHTML = `
-        <div class="estimate-form-wrapper" style="background-color: var(--color-white); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 1rem; border: 2px solid var(--color-teal);">
+        <div class="estimate-form-wrapper" style="background-color: var(--color-blue-light); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 1rem; border: 2px solid var(--color-teal);">
           ${formHtml}
         </div>
       `;
     } else if (isInline) {
       this.innerHTML = `
-        <div class="estimate-form-wrapper" style="background-color: var(--color-white); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 2rem; border: 2px solid var(--color-teal);">
+        <div class="estimate-form-wrapper" style="background-color: var(--color-blue-light); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 2rem; border: 2px solid var(--color-teal);">
           ${formTitleHtml}
           ${formHtml}
         </div>
