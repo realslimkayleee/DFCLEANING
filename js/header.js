@@ -147,7 +147,7 @@ class SiteHeader extends HTMLElement {
                 <span class="star blue-star">★</span>
               </div>
               <h3 class="holiday-banner-title">Happy 4th of July!</h3>
-              <p class="holiday-banner-text">DF Cleaning wishes you and your family a safe, happy, and wonderful Independence Day! 🇺🇸</p>
+              <p class="holiday-banner-text">DF Cleaning wishes you and your family a safe, happy, and wonderful Independence Day!</p>
             `;
             document.body.appendChild(banner);
             

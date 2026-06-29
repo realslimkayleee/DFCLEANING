@@ -5198,7 +5198,7 @@ textarea.estimate-input {
 .holiday-banner {
   position: fixed;
   bottom: 2rem;
-  right: 6rem;
+  right: 10rem;
   width: 320px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
