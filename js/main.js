@@ -315,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxNext = document.getElementById('lightbox-next');
   
   if (lightbox) {
+    const galleryItems = document.querySelectorAll('.gallery-item');
     let currentImageIndex = 0;
     const visibleItems = () => Array.from(galleryItems);
 

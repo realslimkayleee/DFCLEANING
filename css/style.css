@@ -1871,7 +1871,7 @@
   }
 
   .about-leader-card--alejandra img {
-    object-position: center 28%;
+    object-position: center 12%;
   }
 
   .about-leader-meta {
@@ -3057,51 +3057,7 @@
     will-change: transform;
   }
 
-  /* Hero Section */
-  .gallery-hero {
-    position: relative;
-    height: 60vh;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    background: transparent;
-    color: var(--color-navy-dark);
-  }
-  
-  .gallery-hero-bg {
-    position: absolute;
-    top: -10%;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
-    opacity: 0.15;
-    will-change: transform; /* For parallax */
-  }
 
-  .gallery-hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 2rem;
-  }
-
-  .gallery-hero-title {
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    letter-spacing: 0;
-  }
-
-  .gallery-hero-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    opacity: 0.8;
-    max-width: 600px;
-    margin: 0 auto;
-  }
 
   /* Scroll Down Indicator */
   .scroll-down-cue {
@@ -3459,7 +3415,6 @@
     .lightbox-prev, .lightbox-next { display: none; /* Rely on swipe for mobile */ }
     .lightbox-container { padding: 1rem; }
     .lightbox-header { padding: 1rem; }
-    .gallery-hero-title { font-size: 2.5rem; }
   }
 
   /* Reveal Animations */

@@ -5,31 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | DF Cleaning</title>
   <meta name="description" content="View our portfolio of professional cleaning work including residential rooms, commercial spaces, and detailed before/after transformations.">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=gallery-layout-fix">
   
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="js/header.js" defer></script>
+  <script src="js/header.js?v=gallery-layout-fix" defer></script>
   <link rel="icon" type="image/png" href="assets/logo2browswer.png">
 </head>
 <body class="global-bg">
 
   <site-header root-path=""></site-header>
 
-    <main id="smooth-wrapper">
-    <!-- NEW SERVICES-STYLE HEADER -->
-    <div class="services-page-container">
-      <div class="bg-pattern-dots"></div>
-      
-      <div class="services-grid-wrapper">
-        <div class="services-header-v2">
-          <span class="services-eyebrow">Our Gallery</span>
-          <h1 class="services-headline">Our Work, Up Close<span class="text-blue">.</span></h1>
-          <p class="services-subheading">See the difference professional cleaning makes across residential and commercial spaces.</p>
+  <main>
+    <!-- HERO SECTION REUSING ABOUT PAGE CLASSES FOR PERFECT NAV ALIGNMENT -->
+    <section class="about-hero" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="about-hero-copy" style="max-inline-size: 860px; margin-inline: auto; text-align: center;">
+          <span class="about-kicker reveal-up" style="--delay: 0.1s; margin-inline: auto;">Our Gallery</span>
+          <h1 class="about-hero-title reveal-up" id="gallery-title" style="--delay: 0.2s; max-inline-size: 100%;">Our Work, Up Close<span class="text-blue">.</span></h1>
+          <p class="about-hero-lede reveal-up" style="--delay: 0.3s; margin-inline: auto; max-inline-size: 680px;">See the difference professional cleaning makes across residential and commercial spaces.</p>
         </div>
+      </div>
+    </section>
 
-        <!-- GALLERY GRID -->
-        <div class="gallery-grid" id="gallery-grid">
+    <!-- GALLERY GRID WRAPPED IN STANDARD CONTAINER -->
+    <div class="container" style="margin-block-end: 6rem;">
+      <div class="gallery-grid" id="gallery-grid">
 
         <div class="gallery-item reveal-up" tabindex="0" role="button" aria-label="View Fullscreen Image">
           <div class="gallery-img-container">
@@ -116,7 +117,6 @@
         </div>
       </div>
 
-      </div>
     </div>
   </main>
 
