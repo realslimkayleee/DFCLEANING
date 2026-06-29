@@ -438,6 +438,43 @@
     font-weight: 500;
     letter-spacing: 0;
     color: var(--color-navy-dark);
+
+/* SEO Hero Copy Section */
+.seo-hero-copy {
+  background: radial-gradient(circle at 18% 26%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.38) 24%, transparent 44%), radial-gradient(circle at 84% 68%, rgba(20, 184, 166, 0.12) 0%, transparent 22rem), linear-gradient(180deg, hsl(210, 100%, 98%) 0%, var(--color-ice) 45%, hsl(210, 100%, 96%) 100%);
+  padding: 0.5rem 0 2rem 0;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+.seo-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 2rem + 2vw, 3.8rem);
+  color: var(--color-navy-dark);
+  margin-bottom: 0.4rem;
+}
+.seo-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  color: var(--color-navy);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Fade in keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in for the next section (team preview) */
+.team-preview {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.5s;
+}
+
     margin-block-end: 1.05rem;
     max-inline-size: 880px;
     margin-inline: auto;
@@ -539,7 +576,7 @@
   .team-preview {
     background: radial-gradient(circle at 18% 26%, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.38) 24%, transparent 44%), radial-gradient(circle at 84% 68%, rgba(20, 184, 166, 0.12) 0%, transparent 22rem), linear-gradient(180deg, hsl(210, 100%, 98%) 0%, var(--color-ice) 45%, hsl(210, 100%, 96%) 100%);
     overflow: hidden;
-    padding-block: clamp(4.25rem, 6vw, 6.25rem) clamp(4rem, 5.6vw, 5.75rem);
+    padding-block: clamp(2rem, 4vw, 4rem) clamp(4rem, 5.6vw, 5.75rem);
     position: relative;
   }
 
@@ -581,7 +618,7 @@
     margin: 0;
     max-inline-size: 420px;
     position: relative;
-    text-align: left;
+    text-align: center;
   }
 
   .team-preview-header::before {
@@ -5116,6 +5153,18 @@ textarea.estimate-input {
   transform: translateY(10px);
   transition: transform 0.3s ease;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 
 .custom-ig-item:hover .custom-ig-overlay span {
   transform: translateY(0);
