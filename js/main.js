@@ -524,13 +524,11 @@ class SiteContactForm extends HTMLElement {
       const nextInput = document.createElement("input");
       nextInput.type = "hidden";
       nextInput.name = "_next";
-      
-      // Calculate absolute URL for thanks.html based on current location
-      let currentPath = window.location.pathname;
-      let pathBase = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-      nextInput.value = window.location.origin + pathBase + "thanks.html";
-      
-      // We also add a captcha disabling field as a bonus, but let's stick to the user's request.
+
+      // Explicitly point to the thank‑you page at the site root
+      nextInput.value = `${window.location.origin}/thanks.html`;
+
+      // Append the hidden field to the form
       form.appendChild(nextInput);
     }
   }
