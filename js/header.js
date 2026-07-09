@@ -132,42 +132,6 @@ class SiteHeader extends HTMLElement {
         window.addEventListener('scroll', updateScroll, { passive: true });
         updateScroll();
 
-        // 4th of July Holiday Announcement Banner
-        if (!sessionStorage.getItem('df_cleaning_july4_dismissed')) {
-          setTimeout(() => {
-            const banner = document.createElement('div');
-            banner.className = 'holiday-banner';
-            banner.setAttribute('role', 'complementary');
-            banner.setAttribute('aria-label', 'Holiday Announcement');
-            banner.innerHTML = `
-              <button class="holiday-banner-close" aria-label="Dismiss announcement">&times;</button>
-              <div class="holiday-banner-decor">
-                <span class="star red-star">★</span>
-                <span class="star white-star">★</span>
-                <span class="star blue-star">★</span>
-              </div>
-              <h3 class="holiday-banner-title">Happy 4th of July!</h3>
-              <p class="holiday-banner-text">DF Cleaning wishes you and your family a safe, happy, and wonderful Independence Day!</p>
-            `;
-            document.body.appendChild(banner);
-            
-            // Trigger visual reveal transition
-            setTimeout(() => {
-              banner.classList.add('is-visible');
-            }, 100);
-            
-            const closeBtn = banner.querySelector('.holiday-banner-close');
-            if (closeBtn) {
-              closeBtn.addEventListener('click', () => {
-                banner.classList.remove('is-visible');
-                sessionStorage.setItem('df_cleaning_july4_dismissed', 'true');
-                setTimeout(() => {
-                  banner.remove();
-                }, 400);
-              });
-            }
-          }, 1500);
-        }
     }, 0);
   }
 }
