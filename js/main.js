@@ -414,9 +414,7 @@ class SiteContactForm extends HTMLElement {
         </div>`;
 
     const formHtml = `
-        <form action="https://formsubmit.co/alejandra.fajardo71@gmail.com" method="POST" id="cleaning-estimate-form">
-          <input type="hidden" name="_cc" value="darwinfajardo76@gmail.com">
-          <input type="hidden" name="_subject" value="New Estimate Request from DF Cleaning Website">
+
           <!-- Name Row -->
           <div class="form-row">
             <div class="form-group">
