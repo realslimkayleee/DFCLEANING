@@ -413,7 +413,8 @@ class SiteContactForm extends HTMLElement {
           <p style="color: var(--color-gray-dark); margin-block-start: 0.5rem;">Request your free cleaning quote today!</p>
         </div>`;
 
-    const formHtml = `
+    const formHtml = `<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="924e9c8d-2766-4e34-a055-04a74041b625">
 
           <!-- Name Row -->
           <div class="form-row">
@@ -521,7 +522,7 @@ class SiteContactForm extends HTMLElement {
     if (form) {
       const nextInput = document.createElement("input");
       nextInput.type = "hidden";
-      nextInput.name = "_next";
+      nextInput.name = "redirect";
 
       // Explicitly point to the thank‑you page at the site root
       nextInput.value = `${window.location.origin}/thanks.html`;
