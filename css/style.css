@@ -412,8 +412,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-block-start: 10.1rem;
-    padding-block-end: 340px; /* Space for the quote form */
+    padding-block-start: 8rem;
+    padding-block-end: 180px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -2259,17 +2259,39 @@
     margin-block-end: 1.5rem;
   }
 
+
+  /* Enhanced form layout */
+
   .form-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  @media (min-width: 600px) {
-    .form-row {
-      grid-template-columns: 1fr 1fr;
+  .address-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+  }
+
+  .address-row .form-control {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+
+  .form-group {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    .form-group {
+      flex-basis: 100%;
     }
   }
+
 
   .form-label {
     display: block;
@@ -3671,10 +3693,8 @@
    STICKY QUOTE FORM (Centered Hero)
    ========================================= */
 .sticky-quote-form {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(30px);
+  position: relative;
+  margin: 2rem auto 0;
   width: 95%;
   max-width: 800px;
   background-color: rgba(255, 255, 255, 0.90);
@@ -3683,6 +3703,7 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   z-index: 10;
   opacity: 0;
+  transform: translateY(30px);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
   display: flex;
   flex-direction: column;
@@ -3690,9 +3711,11 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+
+
 .sticky-quote-form.visible {
-  transform: translateX(-50%) translateY(0);
   opacity: 1;
+  transform: translateY(0);
 }
 
 .sticky-quote-form-header {
@@ -3764,6 +3787,12 @@
     transform: translateY(0);
   }
 }
+
+/* Adjust sticky form for medium screens */
+@media (max-width: 1280px) {
+  .sticky-quote-form { bottom: 6rem; }
+}
+
 /* =========================================
    SERVICES REDESIGN V2
    ========================================= */
@@ -4552,8 +4581,12 @@ body.global-bg .global-form-section {
 
 /* Entire form wrapper outline */
 .estimate-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
   border: 2px solid var(--color-teal) !important;
+  padding: 1rem;
 }
+
 #sticky-quote-form {
   border: 2px solid var(--color-blue) !important;
 }

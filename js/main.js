@@ -439,6 +439,17 @@ class SiteContactForm extends HTMLElement {
               <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 000-0000" required aria-required="true">
             </div>
           </div>
+          
+          <!-- Address Row -->
+          <div class="form-group">
+            <label class="form-label">Your Address *</label>
+            <div class="form-row address-row">
+              <input type="text" id="street" name="street" class="form-control" placeholder="Street" required aria-required="true">
+              <input type="text" id="city" name="city" class="form-control" placeholder="City" required aria-required="true">
+              <input type="text" id="state" name="state" class="form-control" placeholder="State" required aria-required="true">
+              <input type="text" id="zip" name="zip" class="form-control" placeholder="Zip Code" required aria-required="true">
+            </div>
+          </div>
 
           <!-- Service Requirements -->
           <div class="form-group">
@@ -459,7 +470,7 @@ class SiteContactForm extends HTMLElement {
           <!-- Message -->
           <div class="form-group">
             <label for="details" class="form-label">Special Instructions or Details</label>
-            <textarea id="details" name="details" class="form-control" rows="4" placeholder="Tell us more about your space or specific areas of focus..."></textarea>
+            <textarea id="details" name="details" class="form-control" rows="4" placeholder="Tell us more about your space." ></textarea>
           </div>
 
           <!-- Submit Button -->
