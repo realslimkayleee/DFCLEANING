@@ -716,21 +716,19 @@
     flex-direction: column;
     overflow: visible;
     position: relative;
-    width: 100%;
+    width: auto;
+    max-width: 350px;
+    margin: 0 auto;
   }
 
   .team-person-card--alejandra {
     margin-inline-start: 0;
   }
 
-  .team-person-card--darwin::before {
-    content: "";
-    position: absolute;
-    inset: -0.9rem 0.55rem 0.9rem -0.55rem;
-    background: linear-gradient(135deg, rgba(0, 86, 179, 0.22), rgba(219, 234, 254, 0.86));
-    border-radius: 14px;
-    transform: rotate(3deg);
-    z-index: -1;
+  /* Darwin blue card removed */
+  .team-showcase-grid .about-leader-card--darwin {
+    max-width: 350px;
+    margin: 0 auto;
   }
 
   .team-person-card--alejandra::before {
@@ -758,7 +756,18 @@
   }
 
   .team-person-card--darwin img {
-    object-position: center 20%;
+    object-position: center 5%;
+  }
+  .team-person-card--darwin .team-person-photo {
+    width: 100%;
+    margin: 0;
+  }
+  .team-person-card--darwin .team-person-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center 2%;
   }
 
   .team-person-card--alejandra img {
@@ -2086,13 +2095,13 @@
   }
 
   .about-team-photo img {
-    aspect-ratio: 1.76 / 1;
-    block-size: auto;
-    display: block;
-    inline-size: 100%;
-    object-fit: cover;
-    object-position: center 45%;
-  }
+  aspect-ratio: 1.6 / 1;
+  block-size: auto;
+  display: block;
+  inline-size: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
   .about-team-copy {
     max-inline-size: 430px;
