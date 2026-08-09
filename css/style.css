@@ -35,18 +35,24 @@
     border: none;
   }
 
-  /* Third-party widgets (SociableKit Google Reviews and Instagram feed) inject
-     their own markup into the page and ship their own stylesheet. They are built
-     against browser defaults, so the reset above breaks them: margin/padding: 0
-     collapses the gap between reviewer name and review text, and
-     img { display: block } stacks the inline star icons over the avatar.
+  /* SociableKit widgets (Google Reviews, Instagram feed) render into the page
+     rather than an iframe. Their stylesheet sets font-family, font-size and
+     color on the widget root but never line-height, so `body { line-height:
+     1.6 }` above inherits all the way in and inflates every line box the
+     widget did not size itself.
 
-     revert-layer rolls these subtrees back to browser defaults. It cannot
-     override the widget's own CSS, which is unlayered and therefore already
-     outranks every layer in this file. Applies to any sk-ww-* widget added later. */
-  [class*="sk-ww-"],
-  [class*="sk-ww-"] * {
-    all: revert-layer;
+     That breaks two things it lays out against fixed pixel heights:
+     .sk-star-icon is a 20px display: inline-flex element, so an inflated line
+     box knocks the star row off its baseline and into .sk-reviewer-avatar,
+     which is pinned to 44px and cannot absorb it. The same inflation crowds
+     the reviewer name against the review text.
+
+     Declaring line-height here gives descendants a neutral value to inherit.
+     Every line-height the widget sets explicitly still wins, because its
+     stylesheet is unlayered and unlayered styles outrank every layer in this
+     file. Specificity is not what is doing the work, the cascade is. */
+  [class*="sk-ww-"] {
+    line-height: normal;
   }
 }
 
