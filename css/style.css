@@ -47,12 +47,23 @@
      which is pinned to 44px and cannot absorb it. The same inflation crowds
      the reviewer name against the review text.
 
-     Declaring line-height here gives descendants a neutral value to inherit.
-     Every line-height the widget sets explicitly still wins, because its
-     stylesheet is unlayered and unlayered styles outrank every layer in this
-     file. Specificity is not what is doing the work, the cascade is. */
+     text-align is the same story and is the visible one. The widget declares
+     text-align on exactly three things, all of them chrome: the ratings badge,
+     the load-more button and the image-error state. On the review cards it
+     declares nothing, so it renders with whatever the host page hands down.
+     Any centred ancestor therefore centres every review, which reads as
+     cramped next to the left-aligned stars and reviewer names.
+
+     Declaring both here gives descendants a neutral value to inherit. An
+     inherited value only fills in where the element itself has no declaration,
+     so this wins over a centred ancestor no matter where the centring is set,
+     including an inline style. Everything the widget declares for itself still
+     wins over this, because its stylesheet is unlayered and unlayered styles
+     outrank every layer in this file, so the badge stays centred. Specificity
+     is not what is doing the work here, the cascade is. */
   [class*="sk-ww-"] {
     line-height: normal;
+    text-align: start;
   }
 }
 
