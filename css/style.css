@@ -34,6 +34,20 @@
     background: none;
     border: none;
   }
+
+  /* Third-party widgets (SociableKit Google Reviews and Instagram feed) inject
+     their own markup into the page and ship their own stylesheet. They are built
+     against browser defaults, so the reset above breaks them: margin/padding: 0
+     collapses the gap between reviewer name and review text, and
+     img { display: block } stacks the inline star icons over the avatar.
+
+     revert-layer rolls these subtrees back to browser defaults. It cannot
+     override the widget's own CSS, which is unlayered and therefore already
+     outranks every layer in this file. Applies to any sk-ww-* widget added later. */
+  [class*="sk-ww-"],
+  [class*="sk-ww-"] * {
+    all: revert-layer;
+  }
 }
 
 @layer base {
