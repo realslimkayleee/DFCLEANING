@@ -1104,24 +1104,13 @@
     margin-block-start: clamp(1rem, 2vw, 1.45rem);
   }
 
-  .review-card {
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.97);
-    border: 1px solid rgba(0, 86, 179, 0.1);
-    border-radius: 28px;
-    box-shadow: 0 24px 70px rgba(12, 35, 64, 0.11);
-    display: flex;
-    flex-direction: column;
-    min-block-size: 238px;
-    padding: clamp(1.05rem, 2.1vw, 1.65rem) clamp(1.35rem, 3.2vw, 3rem);
-    text-align: center;
-    transition: opacity 0.22s ease, transform 0.22s ease;
-  }
-
-  .review-card.is-transitioning {
-    opacity: 0;
-    transform: translateY(6px) scale(0.992);
-  }
+  /* Do not add a .review-card rule here. The class is not ours any more.
+     SociableKit's Google Reviews widget puts a bare `review-card` class on
+     every card it renders, alongside its own sk- prefixed ones, so anything
+     matching .review-card lands on the live widget. The old hand-built
+     carousel this styled was replaced by that widget and its markup is gone,
+     but the rule stayed behind and its text-align: center was centring every
+     review on the homepage. Style .sk-review-card if you need to reach a card. */
 
   .review-avatar {
     align-items: center;
@@ -2786,11 +2775,7 @@
     margin-block-start: 1.5rem;
   }
 
-  .review-card {
-    border-radius: 22px;
-    min-block-size: 0;
-    order: 1;
-  }
+  /* .review-card removed here too, same reason as above. */
 
   .review-nav {
     position: absolute;
