@@ -1062,123 +1062,9 @@
     line-height: 1.5;
     margin-block-start: 1rem;
     margin-block-end: 2rem;
-  }
-
-  .reviews-carousel {
-    align-items: center;
-    display: grid;
-    gap: clamp(0.85rem, 1.6vw, 1.2rem);
-    grid-template-columns: 50px minmax(0, 820px) 50px;
-    justify-content: center;
-    margin-block-start: clamp(1rem, 2vw, 1.45rem);
-  }
-
-  /* Do not add a .review-card rule here. The class is not ours any more.
-     SociableKit's Google Reviews widget puts a bare `review-card` class on
-     every card it renders, alongside its own sk- prefixed ones, so anything
-     matching .review-card lands on the live widget. The old hand-built
-     carousel this styled was replaced by that widget and its markup is gone,
-     but the rule stayed behind and its text-align: center was centring every
-     review on the homepage. Style .sk-review-card if you need to reach a card. */
-
-  .review-avatar {
-    align-items: center;
-    block-size: 54px;
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    border-radius: 50%;
-    box-shadow: 0 12px 24px rgba(12, 35, 64, 0.16);
-    color: var(--color-white);
-    display: flex;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 700;
-    inline-size: 54px;
-    justify-content: center;
-    letter-spacing: 0.04em;
-  }
-
-  .avatar-blue { background: linear-gradient(135deg, hsl(211, 100%, 35%), hsl(211, 70%, 55%)); }
+  }.avatar-blue { background: linear-gradient(135deg, hsl(211, 100%, 35%), hsl(211, 70%, 55%)); }
   .avatar-teal { background: linear-gradient(135deg, hsl(178, 68%, 37%), hsl(188, 78%, 52%)); }
-  .avatar-light-blue { background: linear-gradient(135deg, hsl(207, 88%, 58%), hsl(199, 100%, 72%)); }
-
-  .review-name {
-    color: var(--color-navy-dark);
-    font-size: clamp(1.05rem, 0.96rem + 0.36vw, 1.28rem);
-    line-height: 1.15;
-    margin-block-start: 0.65rem;
-  }
-
-  .review-date {
-    color: var(--color-gray-dark);
-    font-size: 0.82rem;
-    line-height: 1.2;
-    margin-block-start: 0.25rem;
-  }
-
-  .review-stars {
-    color: var(--color-yellow);
-    font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.45rem);
-    letter-spacing: 0.08em;
-    line-height: 1;
-    margin-block-start: 0.65rem;
-  }
-
-  .review-text {
-    color: var(--color-text-main);
-    font-size: clamp(0.9rem, 0.86rem + 0.16vw, 1rem);
-    line-height: 1.45;
-    margin-block-start: 0.65rem;
-    max-inline-size: 700px;
-    text-wrap: pretty;
-  }
-
-  .review-nav {
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    block-size: 48px;
-    border: 1px solid rgba(0, 86, 179, 0.1);
-    border-radius: 50%;
-    box-shadow: 0 14px 34px rgba(12, 35, 64, 0.1);
-    color: var(--color-blue);
-    cursor: pointer;
-    display: inline-flex;
-    inline-size: 48px;
-    justify-content: center;
-    transition: background-color var(--transition-speed), box-shadow var(--transition-speed), transform var(--transition-speed);
-  }
-
-  .review-nav:hover {
-    background-color: var(--color-white);
-    box-shadow: 0 18px 40px rgba(12, 35, 64, 0.14);
-    transform: translateY(-2px);
-  }
-
-  .review-nav:active {
-    transform: translateY(0);
-  }
-
-  .review-dots {
-    display: flex;
-    gap: 0.45rem;
-    justify-content: center;
-    margin-block-start: 0.75rem;
-  }
-
-  .review-dot {
-    background-color: hsl(212, 20%, 82%);
-    block-size: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-    inline-size: 8px;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
-  }
-
-  .review-dot[aria-current="true"] {
-    background-color: var(--color-blue);
-    transform: scale(1.15);
-  }
-
-  .ratings-bar {
+  .avatar-light-blue { background: linear-gradient(135deg, hsl(207, 88%, 58%), hsl(199, 100%, 72%)); }.ratings-bar {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.58);
     border: 1px solid rgba(0, 86, 179, 0.14);
@@ -2257,7 +2143,6 @@
     margin-block-end: 1.5rem;
   }
 
-
   /* Enhanced form layout */
 
   .form-row {
@@ -2278,7 +2163,6 @@
     min-width: 0;
   }
 
-
   .form-group {
     flex: 1 1 45%;
     min-width: 200px;
@@ -2289,7 +2173,6 @@
       flex-basis: 100%;
     }
   }
-
 
   .form-label {
     display: block;
@@ -2377,18 +2260,7 @@
 
   .team-person-meta {
     padding-inline: 0.9rem;
-  }
-
-  .reviews-carousel {
-    grid-template-columns: 48px minmax(0, 1fr) 48px;
-  }
-
-  .review-nav {
-    block-size: 48px;
-    inline-size: 48px;
-  }
-
-  .estimate-card {
+  }.estimate-card {
     grid-template-columns: minmax(250px, 0.85fr) minmax(0, 1.35fr);
   }
 
@@ -2736,36 +2608,7 @@
 
   .estimate-form-row--split {
     grid-template-columns: 1fr;
-  }
-
-  .reviews-carousel {
-    gap: 0.75rem;
-    grid-template-columns: 1fr;
-    margin-block-start: 1.5rem;
-  }
-
-  /* .review-card removed here too, same reason as above. */
-
-  .review-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-  }
-
-  .review-nav:hover {
-    transform: translateY(-50%);
-  }
-
-  .review-nav--prev {
-    left: 0.55rem;
-  }
-
-  .review-nav--next {
-    right: 0.55rem;
-  }
-
-  .ratings-bar {
+  }.ratings-bar {
     grid-template-columns: 1fr;
     justify-items: center;
     padding-block: 1.25rem;
@@ -2875,18 +2718,7 @@
   .reviews-subtitle {
     margin-inline: auto;
     max-inline-size: 330px;
-  }
-
-  .review-avatar {
-    block-size: 58px;
-    inline-size: 58px;
-  }
-
-  .review-text {
-    font-size: 0.95rem;
-  }
-
-  .rating-source {
+  }.rating-source {
     justify-content: flex-start;
     inline-size: 100%;
   }
@@ -2980,7 +2812,6 @@
     box-shadow: var(--shadow-md);
     border-color: rgba(0, 86, 179, 0.15);
   }
-
 
   /* Services Card Images */
   .service-card-image {
@@ -3112,8 +2943,6 @@
   .lenis.lenis-smooth [data-scroll-container] {
     will-change: transform;
   }
-
-
 
   /* Scroll Down Indicator */
   .scroll-down-cue {
@@ -3548,7 +3377,6 @@
 
 }
 
-
 /* --- Persistent Frosted Glass Nav --- */
 .site-header-fixed {
   position: fixed;
@@ -3707,8 +3535,6 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-
 
 .sticky-quote-form.visible {
   opacity: 1;
@@ -5066,7 +4892,6 @@ textarea.estimate-input {
   }
 }
 
-
 /* =========================================
    CUSTOM INSTAGRAM CAROUSEL
    ========================================= */
@@ -5194,7 +5019,6 @@ textarea.estimate-input {
   clip: rect(0,0,0,0);
   border: 0;
 }
-
 
 .custom-ig-item:hover .custom-ig-overlay span {
   transform: translateY(0);
@@ -5368,6 +5192,21 @@ textarea.estimate-input {
   line-height: normal;
   text-align: start;
 }
+
+/* These class names are not ours any more. SociableKit's new build stamps them,
+   unprefixed, onto its own markup alongside its sk- prefixed ones, so any rule
+   matching them lands on the live widget:
+
+       review-card    review__content    reviewer    review-card__footer
+       disabled-link
+
+   A leftover `.review-card { text-align: center }` from the hand-built carousel
+   this widget replaced was centring every review on the homepage until
+   2026-08-10. The carousel and all of its CSS are gone now. Do not reintroduce
+   rules on those names, and prefix any new site class. The same goes for bare
+   element selectors: the widget renders <article>, <section>, <header>,
+   <footer> and <time> per review card, so a global rule on any of those tags
+   reaches inside it. That is what the guard below is for. */
 
 /* THE important one. Since 2026-08-09 SociableKit's new Google Reviews build
    renders each review's header as a semantic <header> element. The site rule
