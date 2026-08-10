@@ -65,6 +65,29 @@
     line-height: normal;
     text-align: start;
   }
+
+  /* THE important one. Since 2026-08-09 SociableKit's new Google Reviews build
+     renders each review's header as a semantic <header> element. The site rule
+     at `header { position: absolute; top: 24px; ... }` further down this file
+     styles the site navigation bar by tag name, so it lands on every review
+     header too. That pulls the header out of flow and the review body slides
+     underneath it: reviewer names sit on the stars, dates sit under the review
+     text. The previous SociableKit build used no <header> element at all,
+     which is why this appeared overnight with no change on our side.
+
+     Reset positioning for any header inside a SociableKit widget. Scoped to
+     the widget so the real site header is untouched. The alternative fix is to
+     scope the site rule itself to the site header, which is cleaner but risks
+     missing a page, so this stays as the guard. */
+  [class*="sk-ww-"] header {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: auto;
+    z-index: auto;
+    padding: 0;
+  }
 }
 
 @layer base {
