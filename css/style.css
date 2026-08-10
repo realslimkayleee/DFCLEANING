@@ -34,60 +34,6 @@
     background: none;
     border: none;
   }
-
-  /* SociableKit widgets (Google Reviews, Instagram feed) render into the page
-     rather than an iframe. Their stylesheet sets font-family, font-size and
-     color on the widget root but never line-height, so `body { line-height:
-     1.6 }` above inherits all the way in and inflates every line box the
-     widget did not size itself.
-
-     That breaks two things it lays out against fixed pixel heights:
-     .sk-star-icon is a 20px display: inline-flex element, so an inflated line
-     box knocks the star row off its baseline and into .sk-reviewer-avatar,
-     which is pinned to 44px and cannot absorb it. The same inflation crowds
-     the reviewer name against the review text.
-
-     text-align is the same story and is the visible one. The widget declares
-     text-align on exactly three things, all of them chrome: the ratings badge,
-     the load-more button and the image-error state. On the review cards it
-     declares nothing, so it renders with whatever the host page hands down.
-     Any centred ancestor therefore centres every review, which reads as
-     cramped next to the left-aligned stars and reviewer names.
-
-     Declaring both here gives descendants a neutral value to inherit. An
-     inherited value only fills in where the element itself has no declaration,
-     so this wins over a centred ancestor no matter where the centring is set,
-     including an inline style. Everything the widget declares for itself still
-     wins over this, because its stylesheet is unlayered and unlayered styles
-     outrank every layer in this file, so the badge stays centred. Specificity
-     is not what is doing the work here, the cascade is. */
-  [class*="sk-ww-"] {
-    line-height: normal;
-    text-align: start;
-  }
-
-  /* THE important one. Since 2026-08-09 SociableKit's new Google Reviews build
-     renders each review's header as a semantic <header> element. The site rule
-     at `header { position: absolute; top: 24px; ... }` further down this file
-     styles the site navigation bar by tag name, so it lands on every review
-     header too. That pulls the header out of flow and the review body slides
-     underneath it: reviewer names sit on the stars, dates sit under the review
-     text. The previous SociableKit build used no <header> element at all,
-     which is why this appeared overnight with no change on our side.
-
-     Reset positioning for any header inside a SociableKit widget. Scoped to
-     the widget so the real site header is untouched. The alternative fix is to
-     scope the site rule itself to the site header, which is cleaner but risks
-     missing a page, so this stays as the guard. */
-  [class*="sk-ww-"] header {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    width: auto;
-    z-index: auto;
-    padding: 0;
-  }
 }
 
 @layer base {
@@ -5379,4 +5325,69 @@ textarea.estimate-input {
     max-width: none;
     padding: 1.25rem;
   }
+}
+
+/* ==========================================================================
+   THIRD-PARTY WIDGET GUARDS  (deliberately unlayered, keep at end of file)
+   ==========================================================================
+   These rules must NOT be moved inside an @layer block. Later layers beat
+   earlier ones regardless of specificity, so a guard placed in @layer reset
+   loses to every site rule in base/layout/components/utilities, which is
+   exactly the bug this file had on 2026-08-10. Unlayered author styles
+   outrank all layers, so the guards hold from here. SociableKit's own
+   stylesheet is also unlayered and more specific, so the widget still styles
+   itself and only the host page's bleed-through is neutralised. */
+
+/* SociableKit widgets (Google Reviews, Instagram feed) render into the page
+   rather than an iframe. Their stylesheet sets font-family, font-size and
+   color on the widget root but never line-height, so `body { line-height:
+   1.6 }` above inherits all the way in and inflates every line box the
+   widget did not size itself.
+
+   That breaks two things it lays out against fixed pixel heights:
+   .sk-star-icon is a 20px display: inline-flex element, so an inflated line
+   box knocks the star row off its baseline and into .sk-reviewer-avatar,
+   which is pinned to 44px and cannot absorb it. The same inflation crowds
+   the reviewer name against the review text.
+
+   text-align is the same story and is the visible one. The widget declares
+   text-align on exactly three things, all of them chrome: the ratings badge,
+   the load-more button and the image-error state. On the review cards it
+   declares nothing, so it renders with whatever the host page hands down.
+   Any centred ancestor therefore centres every review, which reads as
+   cramped next to the left-aligned stars and reviewer names.
+
+   Declaring both here gives descendants a neutral value to inherit. An
+   inherited value only fills in where the element itself has no declaration,
+   so this wins over a centred ancestor no matter where the centring is set,
+   including an inline style. Everything the widget declares for itself still
+   wins over this, because its stylesheet is unlayered and unlayered styles
+   outrank every layer in this file, so the badge stays centred. Specificity
+   is not what is doing the work here, the cascade is. */
+[class*="sk-ww-"] {
+  line-height: normal;
+  text-align: start;
+}
+
+/* THE important one. Since 2026-08-09 SociableKit's new Google Reviews build
+   renders each review's header as a semantic <header> element. The site rule
+   at `header { position: absolute; top: 24px; ... }` earlier in this file
+   styles the site navigation bar by tag name, so it lands on every review
+   header too. That pulls the header out of flow and the review body slides
+   underneath it: reviewer names sit on the stars, dates sit under the review
+   text. The previous SociableKit build used no <header> element at all,
+   which is why this appeared overnight with no change on our side.
+
+   Reset positioning for any header inside a SociableKit widget. Scoped to
+   the widget so the real site header is untouched. The alternative fix is to
+   scope the site rule itself to the site header, which is cleaner but risks
+   missing a page, so this stays as the guard. */
+[class*="sk-ww-"] header {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  width: auto;
+  z-index: auto;
+  padding: 0;
 }
