@@ -34,6 +34,60 @@
     background: none;
     border: none;
   }
+
+  /* SociableKit widgets (Google Reviews, Instagram feed) render into the page
+     rather than an iframe. Their stylesheet sets font-family, font-size and
+     color on the widget root but never line-height, so `body { line-height:
+     1.6 }` above inherits all the way in and inflates every line box the
+     widget did not size itself.
+
+     That breaks two things it lays out against fixed pixel heights:
+     .sk-star-icon is a 20px display: inline-flex element, so an inflated line
+     box knocks the star row off its baseline and into .sk-reviewer-avatar,
+     which is pinned to 44px and cannot absorb it. The same inflation crowds
+     the reviewer name against the review text.
+
+     text-align is the same story and is the visible one. The widget declares
+     text-align on exactly three things, all of them chrome: the ratings badge,
+     the load-more button and the image-error state. On the review cards it
+     declares nothing, so it renders with whatever the host page hands down.
+     Any centred ancestor therefore centres every review, which reads as
+     cramped next to the left-aligned stars and reviewer names.
+
+     Declaring both here gives descendants a neutral value to inherit. An
+     inherited value only fills in where the element itself has no declaration,
+     so this wins over a centred ancestor no matter where the centring is set,
+     including an inline style. Everything the widget declares for itself still
+     wins over this, because its stylesheet is unlayered and unlayered styles
+     outrank every layer in this file, so the badge stays centred. Specificity
+     is not what is doing the work here, the cascade is. */
+  [class*="sk-ww-"] {
+    line-height: normal;
+    text-align: start;
+  }
+
+  /* THE important one. Since 2026-08-09 SociableKit's new Google Reviews build
+     renders each review's header as a semantic <header> element. The site rule
+     at `header { position: absolute; top: 24px; ... }` further down this file
+     styles the site navigation bar by tag name, so it lands on every review
+     header too. That pulls the header out of flow and the review body slides
+     underneath it: reviewer names sit on the stars, dates sit under the review
+     text. The previous SociableKit build used no <header> element at all,
+     which is why this appeared overnight with no change on our side.
+
+     Reset positioning for any header inside a SociableKit widget. Scoped to
+     the widget so the real site header is untouched. The alternative fix is to
+     scope the site rule itself to the site header, which is cleaner but risks
+     missing a page, so this stays as the guard. */
+  [class*="sk-ww-"] header {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: auto;
+    z-index: auto;
+    padding: 0;
+  }
 }
 
 @layer base {
@@ -1073,24 +1127,13 @@
     margin-block-start: clamp(1rem, 2vw, 1.45rem);
   }
 
-  .review-card {
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.97);
-    border: 1px solid rgba(0, 86, 179, 0.1);
-    border-radius: 28px;
-    box-shadow: 0 24px 70px rgba(12, 35, 64, 0.11);
-    display: flex;
-    flex-direction: column;
-    min-block-size: 238px;
-    padding: clamp(1.05rem, 2.1vw, 1.65rem) clamp(1.35rem, 3.2vw, 3rem);
-    text-align: center;
-    transition: opacity 0.22s ease, transform 0.22s ease;
-  }
-
-  .review-card.is-transitioning {
-    opacity: 0;
-    transform: translateY(6px) scale(0.992);
-  }
+  /* Do not add a .review-card rule here. The class is not ours any more.
+     SociableKit's Google Reviews widget puts a bare `review-card` class on
+     every card it renders, alongside its own sk- prefixed ones, so anything
+     matching .review-card lands on the live widget. The old hand-built
+     carousel this styled was replaced by that widget and its markup is gone,
+     but the rule stayed behind and its text-align: center was centring every
+     review on the homepage. Style .sk-review-card if you need to reach a card. */
 
   .review-avatar {
     align-items: center;
@@ -2755,11 +2798,7 @@
     margin-block-start: 1.5rem;
   }
 
-  .review-card {
-    border-radius: 22px;
-    min-block-size: 0;
-    order: 1;
-  }
+  /* .review-card removed here too, same reason as above. */
 
   .review-nav {
     position: absolute;
