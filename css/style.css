@@ -679,15 +679,16 @@
   .team-showcase-grid {
     align-items: stretch;
     display: grid;
-    gap: clamp(1.55rem, 2.45vw, 2.25rem);
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
+    gap: 0.3rem;
+    grid-template-columns: 200px 380px 200px;
+    justify-content: flex-end;
     isolation: isolate;
-    justify-content: center;
     margin-inline: auto;
-    max-inline-size: 1200px;
+    margin-block-end: 5rem;
+    max-inline-size: 800px;
     position: relative;
     width: 100%;
+    padding-right: 2rem;
   }
 
   .team-showcase-grid::after {
@@ -727,10 +728,27 @@
 
   /* Darwin blue card removed */
   .team-showcase-grid .about-leader-card--darwin,
-  .team-showcase-grid .about-leader-card--alejandra,
-  .team-showcase-grid .about-leader-card--team {
+  .team-showcase-grid .about-leader-card--alejandra {
     max-width: 350px;
     margin: 0 auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-showcase-grid .about-leader-card--team {
+    max-width: 590px;
+    margin: 0 auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-showcase-grid .about-leader-card--darwin img,
+  .team-showcase-grid .about-leader-card--alejandra img,
+  .team-showcase-grid .about-leader-card--team img {
+    height: 400px;
+    object-fit: cover;
   }
 
   .team-person-card--alejandra::before {
@@ -1817,7 +1835,7 @@
   }
 
   .about-leader-card--team img {
-    object-position: 56% 66%;
+    object-position: 56% 75%;
   }
 
   .about-leader-card--alejandra img {
@@ -2576,7 +2594,7 @@
 
   .team-showcase-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem !important;
+    gap: 0.3rem !important;
     width: 100% !important;
     max-width: 320px !important;
     margin-inline: auto !important;
