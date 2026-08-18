@@ -1772,6 +1772,28 @@
     border-radius: 26px;
     box-shadow: 0 24px 65px rgba(12, 35, 64, 0.12);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-leadership .about-leader-card {
+    height: 500px;
+  }
+
+  .about-leadership .about-leader-card img {
+    flex: 1;
+    object-fit: cover;
+  }
+
+  .about-leader-card--darwin,
+  .about-leader-card--alejandra {
+    height: 500px;
+  }
+
+  .about-leader-card--darwin img,
+  .about-leader-card--alejandra img {
+    flex: 1;
+    object-fit: cover;
   }
 
   .about-leader-card--alejandra {
@@ -1807,6 +1829,10 @@
     border-block-start: 1px solid rgba(12, 35, 64, 0.04);
     padding: 1rem 1.2rem 1.15rem;
     text-align: center;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .about-leader-meta h2 {
